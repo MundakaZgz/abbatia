@@ -1,0 +1,311 @@
+div#container {
+	margin: 1em auto 2em auto;
+	text-align: center;
+	width: 90%;
+}
+
+body.waiting {
+  cursor: wait;
+}
+
+
+/************* LISTADO EDIFICIOS: EDIFICAR O SUBIR NIVEL ****************/
+
+div.dataBuilding {
+	width: 180px;
+	height: 310px;
+	float: left;
+	padding: 10px;
+}
+
+div.dataBuilding table {
+	width: 100%;
+	height: 280px;
+	text-align: center;
+	border-collapse: collapse;
+	border: 1px solid #666;
+}
+
+div.dataBuilding table thead th {
+	background: #F0AF1C;
+	border-bottom: 1px solid #000;
+	padding: .3em 0;
+	font-family: georgia, trebuched-ms, serif;
+}
+
+div.dataBuilding table tfoot td {
+	border-bottom: 1px solid #000;
+	text-align: center;
+	background: #F0AF1C;
+	font-size: .8em !important;
+	padding: .3em 0;
+}
+
+div.dataBuilding table tbody td {
+	border-bottom: 1px solid #000;
+	text-align: left;
+	font-size: 1em !important;	
+	padding: 0.5em .5em;
+}
+
+div.dataBuilding table tbody tr.content {
+	background: #fff url(/images/background-pergamino.jpg) top left;
+	height: 75px;
+}
+
+div.dataBuilding table tbody tr.image {
+	background: #e4cfa2;
+	font-size: .8em !important;
+}
+
+div.dataBuilding dl { position: relative; 	font: .8em tahoma, sans-serif !important; }
+div.dataBuilding dl dt { width: 13em; float: left; left: 0; }
+div.dataBuilding dl dd { margin-left: 13em; text-align: right; }
+
+/************* LISTADO EDIFICIOS: EDIFICAR O SUBIR NIVEL ****************/
+
+table.maintenance {
+	width: 100%;
+	border-collapse: collapse;
+	background: #e4cfa2;
+}
+
+table.maintenance thead tr, table.maintenance tfoot tr {
+	background: #996633;
+	color: #fff;
+}
+
+table.maintenance thead th, table.maintenance tfoot th {
+	background: #f90 url(/images/background-wood.jpg) repeat-x top left;
+	padding: .5em;
+}
+
+table.maintenance td, table.maintenance th {
+	border: 1px solid #999;
+	padding: .2em 1em;
+}
+
+/************* ACCESO LOGIN  ****************/
+
+#loginPanel {
+	color: #fff;
+	margin: 1em auto;
+	width: 342px;
+	height: 406px;
+	background: #b7884c url(/images/background-login.jpg) no-repeat top left;
+	padding-top: 20px;
+}
+
+
+#loginAccess {
+	margin: 250px 10px 1em 10px;
+	border-bottom: 1px solid #333;
+}
+
+#loginAccess .row {
+	margin-top: .5em;
+	clear: both;
+}
+#loginAccess .rowRed {
+	margin-top: .5em;
+	clear: both;
+    color: #FF0000;
+    background: #FF0000
+}
+
+
+
+#loginAccess label {
+	text-align: left;
+	float: left;
+	width: 90px;
+	height: 20px;
+	padding-top: .5em;
+	text-align: right;
+}
+
+#loginOption ul li {
+	display: inline;
+	padding: 0 1em;
+}
+
+#loginOption a {
+	color: #fff !important;
+}
+
+#loginOption a:hover {
+	color: #ff0 !important;
+}
+
+/*********** PANTALLA GENERAL ****************/
+
+
+#events {
+	border: 1px solid #666; 
+	padding: .5em; 
+	background: #fff url(/images/background-pergamino.jpg) top left;
+	}
+	
+#events h4 {	
+	margin: 0 0 1em 0;
+	color: #fff;
+	background: #fff url(/images/background-wood.jpg) repeat-x top left;
+	}
+	
+#events h5 {	margin: 0 0 .5em 0; background: #ccc; padding: .5em 0; }
+#events dt { width: 15em; color: #666; font-weight: bold; line-height: 1.1em;}
+#events dd { margin-left: 16em; line-height: 1.1em; }
+
+#resources dt { width: 40px; line-height: 1.5em;}
+#resources dd { margin-left: 45px; text-align: right; line-height: 1.5em;}
+
+#opcionesPrincipal {
+	margin: 1em auto 0 auto;
+	padding: .5em;
+	border-top: 1px solid #999;
+}
+
+#opcionesPrincipal h5 {
+	background: transparent;
+	margin: 0;
+	padding: 0;
+}
+
+#opcionesPrincipal ul li {
+	display: inline;
+	float: left;
+	margin-left: 1em;
+}
+
+#opcionesPrincipal li a {
+	display: block;
+	text-align: center;
+}
+
+
+.column {
+	width: 160px;
+	margin: 2em 1em 0 0;
+	padding: .5em;
+	border: 1px solid #666;
+	background: #fff url(/images/background-pergamino.jpg) top left;
+}
+
+.column h4 {
+	margin: 0 0 1em 0;
+	color: #fff;
+	background: #fff url(/images/background-wood.jpg) repeat-x top left;
+}
+
+.column h5 {
+	margin: .4em 0;
+}
+
+.column ul, .column p {
+	padding-bottom: 1em;
+}
+
+.column li {
+	line-height: 1.2em;
+}
+
+.column hr {
+	width: 100%;
+}
+
+.water {
+	display: block;
+	background: #fff url(/images/iconos/16/agua.jpg) no-repeat left top;
+}
+
+.wood {
+	display: block;
+	background: #fff url(/images/iconos/16/madera.jpg) no-repeat left top;
+}
+
+.coin {
+	display: block;
+	background: #fff url(/images/iconos/16/monedas.jpg) no-repeat 4px top;
+}
+
+.stone {
+	display: block;
+	background: #fff url(/images/iconos/16/piedra.jpg) no-repeat 10px top;
+}
+
+.iron {
+	display: block;
+	background: #fff url(/images/iconos/16/hierro.jpg) no-repeat 10px top;
+}
+
+.monk {
+	display: block;
+	height: 16px;
+	background: transparent url(/images/iconos/16/monjes.gif) no-repeat left top;
+}
+
+.guards {
+	display: block;
+	height: 16px;	
+	background: transparent url(/images/iconos/16/guardias.gif) no-repeat left top;
+}
+
+.people {
+	display: block;
+	height: 16px;	
+	background: transparent url(/images/iconos/16/aldeanos.gif) no-repeat left top;
+}
+
+/*********** PANTALLA ENTRADA ****************/
+
+.infoEntrada {
+	width: 100%;
+	padding: .5em;
+	margin: 0 auto .5em auto;
+	background: #fff url(/images/background-pergamino2.jpg) top left;
+	text-align: left;
+	border: 1px solid #999;
+}
+
+.infoEntrada p {
+	padding: 1em 0; 
+	}
+
+.infoEntrada h4 {
+	text-align: center;
+	color: #fff;
+	background: #fff url(/images/background-wood.jpg) repeat-x top left;
+	margin: 0 0 1em 0;	
+	}
+	
+.infoEntrada h5 {	
+	margin: 1em 0 .4em 0;
+	text-decoration: underline;
+	}	
+	
+.infoEntrada ol {
+	list-style: decimal;
+	text-align: left !important;
+}
+
+.infoEntrada hr {
+	margin: .5em auto;
+	width: 90%;
+}
+	
+#novedades  dt { width: 1em;  line-height: 1.5em; color: #f00; }
+#novedades  dd { margin-left: 1.4em; line-height: 1.5em;}
+
+#mensajes  dt { width: 12em; line-height: 1.5em; color: #f00; }
+#mensajes  dd { margin-left: 13em; line-height: 1.5em;}
+
+#ultima_conexion  dt { width: 3.5em; line-height: 1.5em; color: #f00; }
+#ultima_conexion  dd { margin-left: 4em; line-height: 1.5em;}
+
+#tecnologias {
+	width: 100%;
+	margin: 0 auto 1em auto;
+	padding: 1em 0;
+	background: #fff; 
+	text-align: center;
+}

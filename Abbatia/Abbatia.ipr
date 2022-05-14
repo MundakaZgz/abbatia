@@ -1,86 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AntConfiguration">
-    <defaultAnt bundledAnt="true" />
-    <buildFile url="file://$PROJECT_DIR$/src/script_ant/build_release_mod.xml">
+    <buildFile url="file://$PROJECT_DIR$/src/main/java/script_ant/build_release_mod.xml">
       <additionalClassPath>
-        <entry path="file://C:/Tomcat5/server/lib/catalina-ant-jmx.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina-ant.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina-cluster.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina-optional.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina-storeconfig.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/servlets-default.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/servlets-invoker.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/servlets-webdav.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-ajp.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-apr.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-coyote.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-http.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-util.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina-ant-jmx.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina-ant.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina-cluster.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina-optional.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina-storeconfig.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/servlets-default.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/servlets-invoker.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/servlets-webdav.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-ajp.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-apr.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-coyote.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-http.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-util.jar" />
         <entry path="file://$PROJECT_DIR$/src/script_ant" />
       </additionalClassPath>
-      <antReference projectDefault="true" />
-      <customJdkName value="" />
-      <maximumHeapSize value="128" />
+      <antCommandLine value=" -Dfile.encoding=ISO-8859-1" />
       <maximumStackSize value="32" />
       <properties>
         <property name="entorno" value="dv" />
       </properties>
     </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/src/script_ant/build_release_mod.xml">
+    <buildFile url="file://$PROJECT_DIR$/src/main/java/script_ant/build_release_mod.xml">
       <additionalClassPath>
         <entry path="file://$PROJECT_DIR$/src/script_ant" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina-ant-jmx.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina-ant.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina-cluster.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina-optional.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina-storeconfig.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/commons-modeler-2.0.1.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/commons-modeler-2.0.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/servlets-default.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/servlets-invoker.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/servlets-webdav.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-ajp.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-apr.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-coyote.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-http.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-jkstatus-ant.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-util.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina-ant-jmx.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina-ant.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina-cluster.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina-optional.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina-storeconfig.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/commons-modeler-2.0.1.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/commons-modeler-2.0.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/servlets-default.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/servlets-invoker.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/servlets-webdav.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-ajp.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-apr.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-coyote.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-http.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-jkstatus-ant.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-util.jar" />
       </additionalClassPath>
-      <antReference projectDefault="true" />
-      <customJdkName value="" />
-      <maximumHeapSize value="128" />
+      <antCommandLine value=" -Dfile.encoding=ISO-8859-1" />
       <maximumStackSize value="32" />
       <properties>
         <property name="entorno" value="it" />
       </properties>
     </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/src/script_ant/build_release_mod.xml">
+    <buildFile url="file://$PROJECT_DIR$/src/main/java/script_ant/build_release_mod.xml">
       <additionalClassPath>
-        <entry path="file://C:/Tomcat5/server/lib/catalina-ant-jmx.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina-ant.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina-cluster.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina-optional.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina-storeconfig.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/catalina.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/commons-modeler-2.0.1.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/commons-modeler-2.0.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/servlets-default.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/servlets-invoker.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/servlets-webdav.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-ajp.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-apr.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-coyote.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-http.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-jkstatus-ant.jar" />
-        <entry path="file://C:/Tomcat5/server/lib/tomcat-util.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina-ant-jmx.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina-ant.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina-cluster.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina-optional.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina-storeconfig.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/catalina.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/commons-modeler-2.0.1.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/commons-modeler-2.0.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/servlets-default.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/servlets-invoker.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/servlets-webdav.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-ajp.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-apr.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-coyote.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-http.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-jkstatus-ant.jar" />
+        <entry path="file:///C:/Tomcat5/server/lib/tomcat-util.jar" />
         <entry path="file://$PROJECT_DIR$/src/script_ant" />
       </additionalClassPath>
-      <antReference projectDefault="true" />
-      <customJdkName value="" />
-      <maximumHeapSize value="128" />
+      <antCommandLine value=" -Dfile.encoding=ISO-8859-1" />
       <maximumStackSize value="32" />
       <properties>
         <property name="entorno" value="pr" />
@@ -108,7 +101,6 @@
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
   </component>
   <component name="CompilerConfiguration">
-    <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
       <entry name=".+\.(gif|png|jpeg|jpg)" />
@@ -125,11 +117,19 @@
       <entry name="?*.properties" />
       <entry name="?*.configuracion" />
     </wildcardResourcePatterns>
-    <annotationProcessing enabled="false" useClasspath="true" />
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Abbatia" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Abbatia" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
-  <component name="CopyrightManager" default="">
-    <module2copyright />
-  </component>
+  <component name="CopyrightManager" default="" />
   <component name="DBNavigator.Project.CodeCompletionSettings">
     <filters>
       <basic-filter>
@@ -312,9 +312,10 @@
     <option name="MAXIMUM_HEAP_SIZE" value="128" />
   </component>
   <component name="EmbeddedBrowser.BrowserComponent" xPos="-1" yPos="-1" width="600" height="200" />
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="ISO-8859-1" />
-  <component name="EntryPointsManager">
-    <entry_points version="2.0" />
+  <component name="Encoding" defaultCharsetForPropertiesFiles="ISO-8859-1">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/abbatia/actionform/RegistroActForm.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="ISO-8859-1" />
   </component>
   <component name="ExportToHTMLSettings">
     <option name="PRINT_LINE_NUMBERS" value="false" />
@@ -333,95 +334,13 @@
   </component>
   <component name="IdProvider" IDEtalkID="DA8F352AA14E57C18C60A3C1A60B7709" />
   <component name="InspectionProjectProfileManager">
-    <profiles>
-      <profile version="1.0" is_locked="false">
-        <option name="myName" value="Project Default" />
-        <option name="myLocal" value="false" />
-        <inspection_tool class="BooleanConstructor" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="CloneCallsSuperClone" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="CloneDeclaresCloneNotSupported" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="ConstantConditions" enabled="false" level="WARNING" enabled_by_default="false">
-          <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
-          <option name="DONT_REPORT_TRUE_ASSERT_STATEMENTS" value="false" />
-        </inspection_tool>
-        <inspection_tool class="ContinueOrBreakFromFinallyBlock" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="EmptyCatchBlock" enabled="false" level="WARNING" enabled_by_default="false">
-          <option name="m_includeComments" value="true" />
-          <option name="m_ignoreTestCases" value="true" />
-          <option name="m_ignoreIgnoreParameter" value="true" />
-        </inspection_tool>
-        <inspection_tool class="EmptyFinallyBlock" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="EmptyStatementBody" enabled="false" level="WARNING" enabled_by_default="false">
-          <option name="m_reportEmptyBlocks" value="false" />
-        </inspection_tool>
-        <inspection_tool class="EmptyTryBlock" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="ExtendsObject" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="FinalPrivateMethod" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="FinalStaticMethod" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="FinalizeCallsSuperFinalize" enabled="false" level="WARNING" enabled_by_default="false">
-          <option name="ignoreObjectSubclasses" value="false" />
-          <option name="ignoreTrivialFinalizers" value="true" />
-        </inspection_tool>
-        <inspection_tool class="ForCanBeForeach" enabled="false" level="WARNING" enabled_by_default="false">
-          <option name="REPORT_INDEXED_LOOP" value="true" />
-        </inspection_tool>
-        <inspection_tool class="InfiniteLoopStatement" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="InfiniteRecursion" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="LoopStatementsThatDontLoop" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="ManualArrayCopy" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="NoExplicitFinalizeCalls" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="PointlessArithmeticExpression" enabled="false" level="WARNING" enabled_by_default="false">
-          <option name="m_ignoreExpressionsContainingConstants" value="false" />
-        </inspection_tool>
-        <inspection_tool class="RedundantCast" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="ReturnFromFinallyBlock" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
-          <option name="processCode" value="true" />
-          <option name="processLiterals" value="true" />
-          <option name="processComments" value="true" />
-        </inspection_tool>
-        <inspection_tool class="StringConstructor" enabled="false" level="WARNING" enabled_by_default="false">
-          <option name="ignoreSubstringArguments" value="false" />
-        </inspection_tool>
-        <inspection_tool class="StringEquality" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="StringToString" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="SynchronizeOnNonFinalField" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="ThrowFromFinallyBlock" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="TrivialIf" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnnecessaryBoxing" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnnecessaryReturn" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnnecessarySemicolon" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnnecessaryTemporaryOnConversionFromString" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnnecessaryTemporaryOnConversionToString" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnnecessaryUnboxing" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnusedAssignment" enabled="false" level="WARNING" enabled_by_default="false">
-          <option name="REPORT_PREFIX_EXPRESSIONS" value="false" />
-          <option name="REPORT_POSTFIX_EXPRESSIONS" value="true" />
-          <option name="REPORT_REDUNDANT_INITIALIZER" value="true" />
-        </inspection_tool>
-        <inspection_tool class="UnusedLabel" enabled="false" level="WARNING" enabled_by_default="false" />
-      </profile>
-    </profiles>
-    <option name="PROJECT_PROFILE" value="Project Default" />
-    <option name="USE_PROJECT_PROFILE" value="true" />
+    <profile version="1.0">
+      <option name="myName" value="Project Default" />
+    </profile>
     <version value="1.0" />
   </component>
   <component name="JavadocGenerationManager">
-    <option name="OUTPUT_DIRECTORY" />
-    <option name="OPTION_SCOPE" value="protected" />
-    <option name="OPTION_HIERARCHY" value="true" />
-    <option name="OPTION_NAVIGATOR" value="true" />
-    <option name="OPTION_INDEX" value="true" />
-    <option name="OPTION_SEPARATE_INDEX" value="true" />
-    <option name="OPTION_DOCUMENT_TAG_USE" value="false" />
-    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false" />
-    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false" />
-    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="true" />
-    <option name="OPTION_DEPRECATED_LIST" value="true" />
     <option name="OTHER_OPTIONS" value="" />
-    <option name="HEAP_SIZE" />
-    <option name="LOCALE" />
-    <option name="OPEN_IN_BROWSER" value="true" />
   </component>
   <component name="LibFinderHistory">
     <history />
@@ -431,6 +350,13 @@
     <option name="FILTER_WARNINGS" value="false" />
     <option name="FILTER_INFO" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
   </component>
   <component name="Palette2">
     <group name="Swing">
@@ -570,7 +496,24 @@
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" project-jdk-name="1.5" project-jdk-type="JavaSDK" />
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+  </component>
   <component name="ResourceManagerContainer">
     <option name="myResourceBundles">
       <value>
@@ -591,7 +534,6 @@
       </map>
     </option>
     <option name="myVersion" value="124" />
-    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="svn" />
@@ -609,6 +551,281 @@
     <option name="autoscrollingFromSource" value="false" />
   </component>
   <component name="libraryTable">
+    <library name="Maven: antlr:antlr:2.7.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/antlr/antlr/2.7.2/antlr-2.7.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/antlr/antlr/2.7.2/antlr-2.7.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/antlr/antlr/2.7.2/antlr-2.7.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-beanutils:commons-beanutils:1.9.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-collections:commons-collections:3.2.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-digester:commons-digester:1.6">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-digester/commons-digester/1.6/commons-digester-1.6.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-digester/commons-digester/1.6/commons-digester-1.6-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-digester/commons-digester/1.6/commons-digester-1.6-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-fileupload:commons-fileupload:1.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-fileupload/commons-fileupload/1.4/commons-fileupload-1.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-fileupload/commons-fileupload/1.4/commons-fileupload-1.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-fileupload/commons-fileupload/1.4/commons-fileupload-1.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-io:commons-io:2.6">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.6/commons-io-2.6.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.6/commons-io-2.6-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.6/commons-io-2.6-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-lang:commons-lang:2.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.5/commons-lang-2.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.5/commons-lang-2.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.5/commons-lang-2.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-logging:commons-logging:1.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.2/commons-logging-1.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.2/commons-logging-1.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.2/commons-logging-1.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-validator:commons-validator:1.1.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-validator/commons-validator/1.1.4/commons-validator-1.1.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-validator/commons-validator/1.1.4/commons-validator-1.1.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-validator/commons-validator/1.1.4/commons-validator-1.1.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.activation:activation:1.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/activation/activation/1.1/activation-1.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/activation/activation/1.1/activation-1.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/activation/activation/1.1/activation-1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.mail:mail:1.5.0-b01">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/mail/mail/1.5.0-b01/mail-1.5.0-b01.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/mail/mail/1.5.0-b01/mail-1.5.0-b01-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/mail/mail/1.5.0-b01/mail-1.5.0-b01-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.servlet:javax.servlet-api:3.0.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: log4j:log4j:1.2.17">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: net.sf.ezmorph:ezmorph:1.0.6">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: net.sf.json-lib:json-lib:jdk15:2.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/net/sf/json-lib/json-lib/2.4/json-lib-2.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/net/sf/json-lib/json-lib/2.4/json-lib-2.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: ognl:ognl:3.1.29">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/ognl/ognl/3.1.29/ognl-3.1.29.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/ognl/ognl/3.1.29/ognl-3.1.29-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/ognl/ognl/3.1.29/ognl-3.1.29-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.commons:commons-lang3:3.8.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.logging.log4j:log4j-api:2.12.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-api/2.12.4/log4j-api-2.12.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-api/2.12.4/log4j-api-2.12.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-api/2.12.4/log4j-api-2.12.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.struts:struts2-core:2.5.30">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-core/2.5.30/struts2-core-2.5.30.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-core/2.5.30/struts2-core-2.5.30-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-core/2.5.30/struts2-core-2.5.30-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.freemarker:freemarker:2.3.31">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/freemarker/freemarker/2.3.31/freemarker-2.3.31.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/freemarker/freemarker/2.3.31/freemarker-2.3.31-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/freemarker/freemarker/2.3.31/freemarker-2.3.31-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.javassist:javassist:3.20.0-GA">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: oro:oro:2.0.7">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/oro/oro/2.0.7/oro-2.0.7.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/oro/oro/2.0.7/oro-2.0.7-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/oro/oro/2.0.7/oro-2.0.7-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: struts:struts:1.2.9">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/struts/struts/1.2.9/struts-1.2.9.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/struts/struts/1.2.9/struts-1.2.9-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/struts/struts/1.2.9/struts-1.2.9-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: xalan:xalan:2.5.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/xalan/xalan/2.5.1/xalan-2.5.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/xalan/xalan/2.5.1/xalan-2.5.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/xalan/xalan/2.5.1/xalan-2.5.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: xml-apis:xml-apis:1.0.b2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="abbatia">
       <CLASSES>
         <root url="file://$PROJECT_DIR$/lib" />
@@ -680,4 +897,3 @@
     </library>
   </component>
 </project>
-
