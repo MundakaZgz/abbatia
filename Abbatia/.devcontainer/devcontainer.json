@@ -30,7 +30,8 @@
 	"extensions": [
 		"vscjava.vscode-java-pack",
 		"GitHub.copilot",
-		"githubPullRequests.remotes"
+		"GitHub.vscode-pull-request-github",
+		"codely.codely-theme"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
