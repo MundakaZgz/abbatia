@@ -21,5 +21,5 @@ COPY ./lib/displaytag-1.2.jar /opt/tomcat/shared/lib/displaytag-1.2.jar
 # Common libraries
 COPY ./lib/mysql-connector-java-5.0.7-bin.jar /opt/tomcat/common/lib/mysql-connector-java-5.0.7-bin.jar
 
-COPY abbatia.war /opt/tomcat/webapps
+COPY target/Abbatia-1.0-SNAPSHOT.war /opt/tomcat/webapps
 CMD ["catalina.sh", "run"]

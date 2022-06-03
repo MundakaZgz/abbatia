@@ -1,18 +1,17 @@
 package org.abbatia.action;
 
-import org.abbatia.bbean.AnimalBBean;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.abbatia.bbean.UsuarioBBean;
 import org.abbatia.bean.Abadia;
 import org.abbatia.bean.Usuario;
 import org.abbatia.utils.Constantes;
+import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import org.apache.commons.beanutils.PropertyUtils;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 public class AceptarNormasAction extends Action {
 

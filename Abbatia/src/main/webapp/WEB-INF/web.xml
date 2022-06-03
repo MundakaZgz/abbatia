@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+    <display-name>Abbatia</display-name>
+    <description>Abbatia - Gestiona tu propia abadia</description>
+    <distributable/>
+    <listener>
+        <listener-class>org.abbatia.ListenerAbadia</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>action</servlet-name>
+        <servlet-class>org.abbatia.actionservlet.AbadiaActionServlet</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>/WEB-INF/struts-config.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>2</param-value>
+        </init-param>
+        <init-param>
+            <param-name>detail</param-name>
+            <param-value>2</param-value>
+        </init-param>
+        <init-param>
+            <param-name>application</param-name>
+            <param-value>org.abbatia.abbatia</param-value>
+        </init-param>
+        <init-param>
+            <param-name>log4j-init-file</param-name>
+            <param-value>/WEB-INF/classes/log4j.properties</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>20</session-timeout>
+    </session-config>
+
+    <mime-mapping>
+        <extension>html</extension>
+        <mime-type>text/html</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>txt</extension>
+        <mime-type>text/plain</mime-type>
+    </mime-mapping>
+    <welcome-file-list>
+        <welcome-file>index.do</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+    <taglib>
+        <taglib-uri>/WEB-INF/struts-bean.tld</taglib-uri>
+        <taglib-location>/WEB-INF/tld/struts-bean.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/WEB-INF/struts-html.tld</taglib-uri>
+        <taglib-location>/WEB-INF/tld/struts-html.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/WEB-INF/struts-logic.tld</taglib-uri>
+        <taglib-location>/WEB-INF/tld/struts-logic.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/WEB-INF/struts-template.tld</taglib-uri>
+        <taglib-location>/WEB-INF/tld/struts-template.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/WEB-INF/struts-nested.tld</taglib-uri>
+        <taglib-location>/WEB-INF/tld/struts-nested.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>/WEB-INF/struts-layout.tld</taglib-uri>
+        <taglib-location>/WEB-INF/tld/struts-layout.tld</taglib-location>
+    </taglib>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>no_access</web-resource-name>
+            <url-pattern>*.jsp</url-pattern>
+        </web-resource-collection>
+        <auth-constraint/>
+    </security-constraint>
+
+<!--
+    <security-constraint>
+        <display-name>Control de Acceso Sistema de Gestión de Cobros</display-name>
+        <web-resource-collection>
+            <web-resource-name>Sistem de Gestión de Cobros</web-resource-name>
+            <url-pattern>*.do</url-pattern>
+            <http-method>DELETE</http-method>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+            <http-method>PUT</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>zeus</role-name>
+            <role-name>admin</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>Control de Acceso Administración de Gestión de Cobros</display-name>
+        <web-resource-collection>
+            <web-resource-name>Administración Sistem de Gestión de Cobros</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+            <http-method>DELETE</http-method>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+            <http-method>PUT</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>Autenticación para acceso a Zeus(SGC)</realm-name>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/error.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    <security-role>
+        <description>Aplicación</description>
+        <role-name>zeus,admin</role-name>
+    </security-role>
+-->
+
+</web-app>
