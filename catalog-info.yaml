@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: diagrams
+  annotations:
+    github.com/project-slug: MundakaZgz/abbatia
+spec:
+  type: other
+  lifecycle: unknown
+  owner: MundakaZgz
