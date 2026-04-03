@@ -17,13 +17,13 @@
 
 <%--
 <head>
-    <link REL="STYLESHEET" HREF="/theme/style-global.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/style-revised.css" TYPE="text/css"/>
-    <script src="/theme/popup/prototype.js" type="text/javascript"></script>
-    <script src="/theme/popup/effects.js" type="text/javascript"></script>
-    <script src="/theme/popup/dragdrop.js" type="text/javascript"></script>
-    <script src="/theme/popup/popup.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="/theme/popup/popup.css" type="text/css" />
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-global.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-revised.css" TYPE="text/css"/>
+    <script src="${pageContext.request.contextPath}/theme/popup/prototype.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/theme/popup/effects.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/theme/popup/dragdrop.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/theme/popup/popup.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/theme/popup/popup.css" type="text/css" />
 </head>
 --%>
 

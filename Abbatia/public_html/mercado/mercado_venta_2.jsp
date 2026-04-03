@@ -9,8 +9,8 @@
 <html>
 <head>
     <title>Pantalla mercado venta</title>
-    <link REL="STYLESHEET" HREF="/theme/styles.css" TYPE="text/css"/>
-    <script type="text/javascript" src="/theme/validator.js"></script>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/styles.css" TYPE="text/css"/>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/validator.js"></script>
     <html:javascript formName="VentaForm" dynamicJavascript="true" staticJavascript="false"/>
 </head>
 <body topmargin="2" leftmargin="2" bgcolor="#E1C08B" text="#000000">

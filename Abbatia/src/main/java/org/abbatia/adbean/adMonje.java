@@ -32,18 +32,18 @@ public class adMonje extends adbeans {
   public static int MONJES_ENFERMOS = 4;  // Enfermos
   public static int MONJES_VIAJANDO = 5;
   public static int MONJES_VISITA = 6;
-  public static int MONJES_VISITA_MIABADIA = 7;  // Monjes que están de visita en mi abbatia
-  //public static int MONJES_VISITA_MIABADIA_ENF = 8;  // Monjes que están de visita en mi abbatia y estan enfermos
+  public static int MONJES_VISITA_MIABADIA = 7;  // Monjes que estï¿½n de visita en mi abbatia
+  //public static int MONJES_VISITA_MIABADIA_ENF = 8;  // Monjes que estï¿½n de visita en mi abbatia y estan enfermos
   public static int MONJES_VISITA_ENFERMOS = 8;  // Monjes de visita que estan enfermos
   public static int MONJES_OSARIO = 9;
 */
 
 
     /**
-     * Instancia la clase sin obtener una nueva conexión
+     * Instancia la clase sin obtener una nueva conexiï¿½n
      *
-     * @param con Conexión
-     * @throws AbadiaException Excepción general
+     * @param con Conexiï¿½n
+     * @throws AbadiaException Excepciï¿½n general
      */
     public adMonje(Connection con) throws AbadiaException {
         super(con);
@@ -82,7 +82,7 @@ public class adMonje extends adbeans {
                 monje.setEdad(CoreTiempo.getEdad(rs.getString("FECHA_NACIMIENTO")));
                 monje.setSiguienteID(getSiguiente(MonjeID, idAbadia));
                 monje.setAnteriorID(getAnterior(MonjeID, idAbadia));
-                // Buscar la alimentación que tiene
+                // Buscar la alimentaciï¿½n que tiene
                 monje.setComeFamiliaID1(rs.getShort("COMER_FAMILIAID_1"));
                 monje.setComeFamiliaID2(rs.getShort("COMER_FAMILIAID_2"));
                 monje.setComeFamiliaID3(rs.getShort("COMER_FAMILIAID_3"));
@@ -239,7 +239,7 @@ public class adMonje extends adbeans {
                 p_oMonje.setEdad(CoreTiempo.getEdad(rs.getString("FECHA_NACIMIENTO")));
                 p_oMonje.setSiguienteID(getSiguiente(MonjeID, idAbadia));
                 p_oMonje.setAnteriorID(getAnterior(MonjeID, idAbadia));
-                // Buscar la alimentación que tiene
+                // Buscar la alimentaciï¿½n que tiene
                 // Jerarquia
                 utils = new adUtils(con);
                 p_oMonje.setJerarquia(utils.getSQL(sSQLJerar, "*Novicio*"));
@@ -302,7 +302,7 @@ public class adMonje extends adbeans {
     }
 
     /**
-     * Devuelve la descripcion de la jerarquía eclesiastica de un monje
+     * Devuelve la descripcion de la jerarquï¿½a eclesiastica de un monje
      *
      * @param idMonje
      * @param idIdioma
@@ -318,7 +318,7 @@ public class adMonje extends adbeans {
 
     }
 
-    // Devuelve el núm de monjes que hay vivos en una abbatia
+    // Devuelve el nï¿½m de monjes que hay vivos en una abbatia
 
     public int getNumMonjes(int idAbadia) throws AbadiaSQLException {
         String sSQL = "Select Count(*) from monje where ESTADO<>1 AND ABADIAID = ?";
@@ -345,7 +345,7 @@ public class adMonje extends adbeans {
         }
     }
 
-    // Devuelve el núm de monjes que hay vivos en una abbatia
+    // Devuelve el nï¿½m de monjes que hay vivos en una abbatia
 
     public int getNumMonjesSinJerarquia(int idAbadia) throws AbadiaSQLException {
         String sSQL = "Select (Select Count(*) from monje m where m.estado =" + Constantes.MONJE_VIVO + " AND m.abadiaid = a.abadiaid ) - " +
@@ -471,12 +471,12 @@ public class adMonje extends adbeans {
         String sSQL = "";
         adEdificio oEdificioAD;
         oEdificioAD = new adEdificio(con);
-        //consulta para verificar si la abadía dispone de hospederia.
+        //consulta para verificar si la abadï¿½a dispone de hospederia.
         if (oEdificioAD.existeEdificioTipo(idAbadia, Constantes.EDIFICIO_HOSPEDERIA)) {
             //si despone de hospederia los monjes con jerarquia >= 3 no ocupan plaza en el dormitorio
             sSQL = "Select * from monje where abadiaid = ? and estado = 0 and JERARQUIAID < 3 order by fecha_nacimiento limit ? ";
         } else {
-            //si no dispone de hospedería, no se distingue entre eminencias y novicios...
+            //si no dispone de hospederï¿½a, no se distingue entre eminencias y novicios...
             sSQL = "Select * from monje where abadiaid = ? and estado = 0 order by fecha_nacimiento limit ?";
         }
 
@@ -506,14 +506,14 @@ public class adMonje extends adbeans {
         }
     }
 
-    //dará de alta un monje en la base de datos
+    //darï¿½ de alta un monje en la base de datos
 
     /**
      * Gestiona el alta de un nuevo monje, con todas sus habilidades y actividades iniciales
      * a partir de un objeto {@link Monje}
      * - Insert en la tabla de monjes
-     * - Insert en la tabla de monjes alimentación
-     * - Invocaciones a los métodos de creación de activicades y habilidades
+     * - Insert en la tabla de monjes alimentaciï¿½n
+     * - Invocaciones a los mï¿½todos de creaciï¿½n de activicades y habilidades
      *
      * @param monje
      * @return
@@ -630,7 +630,7 @@ public class adMonje extends adbeans {
     }
 
     /**
-     * Actualiza los datos de alimentación de un monje
+     * Actualiza los datos de alimentaciï¿½n de un monje
      *
      * @param monje
      * @return boolean
@@ -663,7 +663,7 @@ public class adMonje extends adbeans {
     }
 
     /**
-     * Actualiza los datos de alimentación de un monje
+     * Actualiza los datos de alimentaciï¿½n de un monje
      *
      * @param monje
      * @throws AbadiaException
@@ -728,7 +728,7 @@ public class adMonje extends adbeans {
      * desbloquea las tareas de copia de un monje determinado
      *
      * @param idMonje Identificador de monje
-     * @throws AbadiaException Excepción general
+     * @throws AbadiaException Excepciï¿½n general
      */
     public void desbloquarActividadesCopia(int idMonje) throws AbadiaException {
         String sSQL = "update actividad set actividadid = 1, bloqueada = 0 where monjeid = " + idMonje + " and bloqueada = 1 and actividadid = " + Constantes.TAREA_COPIAR;
@@ -741,7 +741,7 @@ public class adMonje extends adbeans {
      *
      * @param idMonje   Identificador de monje
      * @param idPeriodo Identificador de periodo
-     * @throws AbadiaException Excepción general
+     * @throws AbadiaException Excepciï¿½n general
      */
     public void desbloquarActividadesCopiaPeriodo(int idMonje, int idPeriodo) throws AbadiaException {
         String sSQL = "update actividad set actividadid = 1, bloqueada = 0 where monjeid = " + idMonje + " and bloqueada = 1 and actividadid = " + Constantes.TAREA_COPIAR + " and periodoid = " + idPeriodo;
@@ -1026,7 +1026,7 @@ public class adMonje extends adbeans {
      * @param tipo     identificador del monje
      * @return
      * @throws org.abbatia.exception.AbadiaSQLException
-     *          Excepción base de abbatia
+     *          Excepciï¿½n base de abbatia
      */
     public ArrayList<Monje> getDatosMonjesPorAbadiaH(long idAbadia, int tipo) throws AbadiaException {
         Monje monje;
@@ -1057,7 +1057,7 @@ public class adMonje extends adbeans {
                 monje.setFechaDeNacimiento(Utilidades.formatStringFromDB(rs.getString("FECHA_NACIMIENTO")));
                 monje.setFechaDeFallecimiento(Utilidades.formatStringFromDB(rs.getString("FECHA_FALLECIMIENTO")));
                 monje.setEdad(CoreTiempo.getEdad(rs.getString("FECHA_NACIMIENTO")));
-                // Buscar la alimentación que tiene
+                // Buscar la alimentaciï¿½n que tiene
                 monje.setComeFamiliaID1(rs.getShort("COMER_FAMILIAID_1"));
                 monje.setComeFamiliaID2(rs.getShort("COMER_FAMILIAID_2"));
                 monje.setComeFamiliaID3(rs.getShort("COMER_FAMILIAID_3"));
@@ -1117,7 +1117,7 @@ public class adMonje extends adbeans {
      * @param idMonje Identificador del monje
      * @return Monje
      * @throws org.abbatia.exception.AbadiaSQLException
-     *          Excepción base de abbatia
+     *          Excepciï¿½n base de abbatia
      */
     public Monje recuperarDatosMonje(int idMonje) throws AbadiaException {
         Monje monje = new Monje();
@@ -1188,12 +1188,12 @@ public class adMonje extends adbeans {
     }
 
     /**
-     * Recupera toda la informacion relativa a un la locacización de un monje {@link MonjeVisita}
+     * Recupera toda la informacion relativa a un la locacizaciï¿½n de un monje {@link MonjeVisita}
      *
      * @param idMonje  Identificador del monje
      * @param resource Objeto de recursos multiidioma
      * @return MonjeVisita
-     * @throws AbadiaSQLException Excepción base de abbatia
+     * @throws AbadiaSQLException Excepciï¿½n base de abbatia
      */
     public MonjeVisita recuperarLocalizacionMonje(int idMonje, MessageResources resource) throws AbadiaException {
         MonjeVisita monjeVisita;
@@ -1203,7 +1203,7 @@ public class adMonje extends adbeans {
 
         //recuperamos los datos generales del monje
         monje = recuperarDatosMonje(idMonje);
-        //si el monje está de viaje hacia otra abadía o está de visita
+        //si el monje estï¿½ de viaje hacia otra abadï¿½a o estï¿½ de visita
         if (monje.getEstado() == Constantes.MONJE_VIAJE || monje.getEstado() == Constantes.MONJE_VISITA) {
             monjeVisita = recuperarDatosViaje(idMonje);
             //si no retorna nada significa que no existe registro de viaje..
@@ -1214,7 +1214,7 @@ public class adMonje extends adbeans {
                 monjeVisita.setIdRegion(monje.getIdRegion());
             }
         } else {
-            //si el monje está en su abbatia, lo datos son los suyos propios
+            //si el monje estï¿½ en su abbatia, lo datos son los suyos propios
             monjeVisita = new MonjeVisita();
             monjeVisita.setIdMonje(monje.getIdMonje());
             monjeVisita.setIdAbadia(monje.getIdAbadia());
@@ -1245,7 +1245,7 @@ public class adMonje extends adbeans {
             if (rs.next()) {
                 monje = new MonjeVisita();
                 monje.setIdMonje(idMonje);
-                //si la fecha partida origen no está informada significa que está de viaje hacia una abadía o que ya ha llegado a la abadía destino
+                //si la fecha partida origen no estï¿½ informada significa que estï¿½ de viaje hacia una abadï¿½a o que ya ha llegado a la abadï¿½a destino
                 if (rs.getString("FECHA_PARTIDA_ORIGEN") == null) {
                     monje.setIdAbadia(rs.getInt("ABADIAID_DESTINO"));
                 } else {
@@ -1374,7 +1374,7 @@ public class adMonje extends adbeans {
     }
 
     /**
-     * Recupera un ArrayList con los monejs que llevan n días muertos
+     * Recupera un ArrayList con los monejs que llevan n dï¿½as muertos
      *
      * @param nDias
      * @return
@@ -1437,12 +1437,12 @@ public class adMonje extends adbeans {
      * @param resource
      * @return
      * @throws org.abbatia.exception.AbadiaSQLException
-     *          Excepción base de abbatia
+     *          Excepciï¿½n base de abbatia
      */
     public ArrayList<Monje> getMonjesParaCopiar(int idAbadia, MessageResources resource) throws AbadiaException {
         Monje monje;
         //incluir los filtros establecidos para los monjes que pueden copiar libros.
-        //no deberían salir los monjes que ya tienen taréas de copia.
+        //no deberï¿½an salir los monjes que ya tienen tarï¿½as de copia.
 
         String sSQL = "Select m.monjeid, m.jerarquiaid, m.nombre, m.apellido1, round(mh_fe.valor_actual) as fe, round(mh_des.valor_actual) as destreza, round(mh_tal.valor_actual) as talento, round(mh_idi.valor_actual) as idioma " +
                 " from monje m, habilidad_monje mh_fe, habilidad_monje mh_des, habilidad_monje mh_tal, habilidad_monje mh_idi " +
@@ -1498,7 +1498,7 @@ public class adMonje extends adbeans {
      * @param idMonje   Identificador de monje
      * @param idPeriodo Identificador de periodo
      * @return
-     * @throws AbadiaException Excepción general
+     * @throws AbadiaException Excepciï¿½n general
      */
     public boolean getPeriodoMonjeBloqueado(int idMonje, int idPeriodo) throws AbadiaException {
         adUtils utilsAD = new adUtils(con);
@@ -1896,7 +1896,7 @@ public class adMonje extends adbeans {
     }
 
     /**
-     * Recupera un arraylist con los límites de salud por edades de los monjes
+     * Recupera un arraylist con los lï¿½mites de salud por edades de los monjes
      *
      * @return
      * @throws AbadiaException
@@ -2244,7 +2244,7 @@ public class adMonje extends adbeans {
     }
 
     /**
-     * Verifica si el tiempo transcurrido desde la última expulsión autoriza una nueva
+     * Verifica si el tiempo transcurrido desde la ï¿½ltima expulsiï¿½n autoriza una nueva
      *
      * @param idAbadia
      * @return
@@ -2267,7 +2267,7 @@ public class adMonje extends adbeans {
     }
 
     /**
-     * Recupera los puntos que aporta un monje al cálculo general de la puntuación
+     * Recupera los puntos que aporta un monje al cï¿½lculo general de la puntuaciï¿½n
      *
      * @param idMonje
      * @return
@@ -2312,7 +2312,7 @@ public class adMonje extends adbeans {
 
 
     /**
-     * recupera los datos del último monje expulsado a partir de una abadía.
+     * recupera los datos del ï¿½ltimo monje expulsado a partir de una abadï¿½a.
      *
      * @param idAbadia
      * @return
@@ -2352,7 +2352,7 @@ public class adMonje extends adbeans {
     }
 
     /**
-     * recupera los datos del último monje expulsado a partir de una abadía.
+     * recupera los datos del ï¿½ltimo monje expulsado a partir de una abadï¿½a.
      *
      * @param idAbadia
      * @return
@@ -2450,7 +2450,7 @@ public class adMonje extends adbeans {
     }
 
     /**
-     * Recupera un arraylist de monjes que tienen alguna de sus taréas sin asignar.
+     * Recupera un arraylist de monjes que tienen alguna de sus tarï¿½as sin asignar.
      *
      * @return
      * @throws AbadiaException

@@ -13,9 +13,9 @@
     <title>
         <bean:message key="index.header"/>
     </title>
-    <link REL="STYLESHEET" HREF="/theme/styles.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/style-global.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/style-revised.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/styles.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-global.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-revised.css" TYPE="text/css"/>
     <script type="text/javascript">
         function confirmarCongelacion() {
             return confirm('<bean:message key="usuario.opcion.congelar.confirmacion"/>');

@@ -15,9 +15,12 @@ import javax.naming.NamingException;
 import java.text.DecimalFormat;
 import java.text.ParsePosition;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Utilidades {
     private static Logger log = Logger.getLogger(Utilidades.class.getName());
+    private static final Pattern DATE_YYYY_MM_DD = Pattern.compile("(\\d{1,4})-(\\d{1,2})-(\\d{1,2})");
     public static Random r = new Random();
 
     public static void main(String[] argv) {
@@ -337,22 +340,42 @@ public class Utilidades {
     }
 
     public static GregorianCalendar formatStringToCalendar(String strDateDB) {
-        String strDate = "";
-        String year = null;
-        String month = null;
-        String day = null;
-
-        StringTokenizer stToken = new StringTokenizer(strDateDB, "-");
-
-        if (stToken.hasMoreTokens()) {
-            //Coger las particiones de una a una
-            year = stToken.nextToken();
-            month = stToken.nextToken();
-            day = stToken.nextToken();
+        if (strDateDB == null) {
+            return new GregorianCalendar();
         }
-        //si la fecha contiene tambi�n hora y minutos...
-        GregorianCalendar gFecha = new GregorianCalendar(Integer.valueOf(year).intValue(), Integer.valueOf(month).intValue(), Integer.valueOf(day).intValue());
-        return gFecha;
+
+        String fecha = strDateDB.trim();
+        if (fecha.length() == 0) {
+            return new GregorianCalendar();
+        }
+
+        Matcher matcher = DATE_YYYY_MM_DD.matcher(fecha);
+        if (matcher.find()) {
+            String year = matcher.group(1);
+            String month = matcher.group(2);
+            String day = matcher.group(3);
+            return new GregorianCalendar(Integer.valueOf(year).intValue(), Integer.valueOf(month).intValue(), Integer.valueOf(day).intValue());
+        }
+
+        try {
+            StringTokenizer stToken = new StringTokenizer(fecha, "-");
+            String year = null;
+            String month = null;
+            String day = null;
+            if (stToken.hasMoreTokens()) {
+                year = stToken.nextToken();
+            }
+            if (stToken.hasMoreTokens()) {
+                month = stToken.nextToken();
+            }
+            if (stToken.hasMoreTokens()) {
+                day = stToken.nextToken();
+            }
+            return new GregorianCalendar(Integer.valueOf(year).intValue(), Integer.valueOf(month).intValue(), Integer.valueOf(day).intValue());
+        } catch (Exception e) {
+            log.warn("No se pudo parsear la fecha '" + strDateDB + "', se usa fecha actual", e);
+            return new GregorianCalendar();
+        }
     }
 
     public static synchronized void incrementarContador() {

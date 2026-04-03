@@ -9,6 +9,7 @@ import org.abbatia.dbms.ConnectionFactory;
 import org.abbatia.dbms.DBMSUtils;
 import org.abbatia.exception.UsuarioBloqueadoException;
 import org.abbatia.exception.base.AbadiaException;
+import org.abbatia.exception.AbadiaNotFoundException;
 import org.abbatia.exception.base.SystemException;
 import org.abbatia.utils.Constantes;
 import org.abbatia.utils.Utilidades;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by Benjamín Rodríguez.
+ * Created by Benjamï¿½n Rodrï¿½guez.
  * User: benjamin
  * Date: 24-may-2008
  * Time: 21:06:39
@@ -213,7 +214,11 @@ public class UsuarioBBean {
             oForumAD.validar(oUsuario);
 
             oAbadiaAD = new adAbadia(con);
-            hmReturn.put(Constantes.ABADIA, oAbadiaAD.recuperarAbadiaDeUsuario(oUsuario, p_oResource));
+            try {
+                hmReturn.put(Constantes.ABADIA, oAbadiaAD.recuperarAbadiaDeUsuario(oUsuario, p_oResource));
+            } catch (AbadiaNotFoundException e) {
+                hmReturn.put(Constantes.ABADIA, null);
+            }
             hmReturn.put(Constantes.USER_KEY, oUsuario);
             return hmReturn;
         } finally {
@@ -273,7 +278,7 @@ public class UsuarioBBean {
         try {
             con = ConnectionFactory.getConnection(Constantes.DB_CONEXION_ABADIAS);
             oUtilsAD = new adUtils(con);
-            hmRequest.put("regiones", oUtilsAD.getTableRegionMenosUso());
+            hmRequest.put("regiones", oUtilsAD.getTableRegion());
             hmRequest.put("ordenes", oUtilsAD.getTable(Constantes.TABLA_ORDEN));
             hmRequest.put("actividades", oUtilsAD.getClaveValor(Constantes.TABLA_ACTIVIDAD));
             return hmRequest;
@@ -338,6 +343,25 @@ public class UsuarioBBean {
             log.info(msgLog);
         }
 
+    }
+
+    public void aprobarAltaPendiente(long p_lUsuarioId) throws AbadiaException {
+        String sTrace = this.getClass() + ".aprobarAltaPendiente()";
+        String msgLog = "Entrando en metodo: " + sTrace;
+        log.info(msgLog);
+
+        adUsuario oUsuarioAD;
+        Connection con = null;
+
+        try {
+            con = ConnectionFactory.getConnection(Constantes.DB_CONEXION_ABADIAS);
+            oUsuarioAD = new adUsuario(con);
+            oUsuarioAD.actualizarTipoUsuario(p_lUsuarioId, Constantes.USUARIO_BASICO);
+        } finally {
+            DBMSUtils.cerrarObjetoSQL(con);
+            msgLog = "Saliendo de metodo: " + sTrace;
+            log.info(msgLog);
+        }
     }
 
     public ArrayList<Table> recuperarSupporters(int p_iPagina, Point p_pTotal, MessageResources p_oResource) throws AbadiaException {

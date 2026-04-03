@@ -8,14 +8,14 @@
 <html>
 <head>
     <title>Pantalla mercado venta</title>
-    <link REL="STYLESHEET" HREF="/theme/styles.css" TYPE="text/css"/>
-    <script type="text/javascript" src="/theme/validator.js"></script>
-    <script type="text/javascript" src="/theme/overlibmws/overlibmws.js"></script>
-    <script type="text/javascript" src="/theme/overlibmws/ajaxcontentmws.js"></script>
-    <script type="text/javascript" src="/theme/overlibmws/iframecontentmws.js"></script>
-    <script type="text/javascript" src="/theme/overlibmws/overlibmws_draggable.js"></script>
-    <script type="text/javascript" src="/theme/overlibmws/overlibmws_scroll.js"></script>
-    <script type="text/javascript" src="/theme/popup.js"></script>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/styles.css" TYPE="text/css"/>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/validator.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/overlibmws.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/ajaxcontentmws.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/iframecontentmws.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/overlibmws_draggable.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/overlibmws_scroll.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/popup.js"></script>
     <html:javascript formName="VentaAgrupadaForm" dynamicJavascript="true" staticJavascript="false"/>
 </head>
 

@@ -5,6 +5,7 @@
 <%@ taglib uri="/WEB-INF/tld/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/WEB-INF/tld/struts-template.tld" prefix="template" %>
 <%@ taglib uri="/WEB-INF/tld/struts-logic.tld" prefix="logic" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <script type="text/javascript" language="JavaScript">
     function validarCampos() {
@@ -21,9 +22,9 @@
 <HTML>
 <HEAD>
     <TITLE><bean:message key="login.title"/></TITLE>
-    <link rel="stylesheet" href="/theme/style-global.css" type="text/css"/>
-    <link rel="stylesheet" href="/theme/style-revised.css" type="text/css"/>
-    <script language="JavaScript" type="text/javascript" src="/theme/abbatia.js"></script>
+    <link rel="stylesheet" href="<c:url value='/theme/style-global.css'/>" type="text/css"/>
+    <link rel="stylesheet" href="<c:url value='/theme/style-revised.css'/>" type="text/css"/>
+    <script language="JavaScript" type="text/javascript" src="<c:url value='/theme/abbatia.js'/>"></script>
 </HEAD>
 <body>
 <div id="container">

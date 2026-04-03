@@ -2,13 +2,16 @@ package org.abbatia.action;
 
 import org.abbatia.actionform.AbadiaActForm;
 import org.abbatia.bbean.AbadiaBBean;
+import org.abbatia.bbean.UsuarioBBean;
 import org.abbatia.bean.Abadia;
 import org.abbatia.bean.Usuario;
 import org.abbatia.exception.AbadiaDBConnectionException;
 import org.abbatia.exception.AbadiaSQLException;
 import org.abbatia.exception.AbadiaYaExisteException;
 import org.abbatia.exception.RegionNoValidaException;
+import org.abbatia.exception.base.AbadiaException;
 import org.abbatia.utils.Constantes;
+import org.apache.log4j.Logger;
 import org.apache.struts.action.*;
 import org.apache.struts.util.MessageResources;
 
@@ -20,6 +23,8 @@ import java.util.HashMap;
 import java.util.Locale;
 
 public class RegistroAbadiaAction extends Action {
+    private static Logger log = Logger.getLogger(RegistroAbadiaAction.class.getName());
+
     /**
      * This is the main action called from the Struts framework.
      *
@@ -56,11 +61,9 @@ public class RegistroAbadiaAction extends Action {
 
                 if (oReturn instanceof Locale) {
                     setLocale(request, (Locale) oReturn);
-                    request.getSession().setAttribute(Constantes.USER_KEY, usuario);
-                    request.getSession().setAttribute(Constantes.ABADIA, abadia);
-                    return mapping.findForward("principal");
+                    return redirigirAPrincipalOSeguirAlta(mapping, request, usuario, resource, oAbadiaBBean, abadiaf, errors);
                 }
-                //validamos si el usuario ya dispone de una abadía.
+                //validamos si el usuario ya dispone de una abadï¿½a.
                 if (oReturn instanceof HashMap) {
                     request.getSession().setAttribute("nombre_abadia", abadiaf.getNombreAbadia());
                     request.getSession().setAttribute("regiones", ((HashMap) oReturn).get("regiones"));
@@ -80,9 +83,7 @@ public class RegistroAbadiaAction extends Action {
 
                 if (oReturn instanceof Locale) {
                     setLocale(request, (Locale) oReturn);
-                    request.getSession().setAttribute(Constantes.USER_KEY, usuario);
-                    request.getSession().setAttribute(Constantes.ABADIA, abadia);
-                    return mapping.findForward("principal");
+                    return redirigirAPrincipalOSeguirAlta(mapping, request, usuario, resource, oAbadiaBBean, abadiaf, errors);
                 }
 
                 if (oReturn instanceof Abadia) {
@@ -92,21 +93,59 @@ public class RegistroAbadiaAction extends Action {
             }
             return mapping.findForward("success");
         } catch (AbadiaSQLException e) {
-            mensajes.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage("error.general.aplicacion"));
-            saveMessages(request.getSession(), mensajes);
-            return mapping.findForward("error");
+            prepararRetornoRegistroConError(request, abadiaf, errors, "error.general.aplicacion");
+            return mapping.findForward("errorregistro");
         } catch (AbadiaDBConnectionException adbce) {
-            mensajes.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage("error.general.aplicacion"));
-            saveMessages(request.getSession(), mensajes);
-            return mapping.findForward("error");
+            prepararRetornoRegistroConError(request, abadiaf, errors, "error.general.aplicacion");
+            return mapping.findForward("errorregistro");
         } catch (AbadiaYaExisteException ayee) {
             errors.add(ActionErrors.GLOBAL_MESSAGE, new ActionMessage("registro.error.abadiayaexiste"));
             saveErrors(request, errors);
             return mapping.findForward("registro2");
         } catch (RegionNoValidaException e) {
-            errors.add(ActionErrors.GLOBAL_MESSAGE, new ActionMessage("registro.error.regionnovalida"));
-            saveErrors(request, errors);
+            prepararRetornoRegistroConError(request, abadiaf, errors, "registro.error.regionnovalida");
+            return mapping.findForward("errorregistro");
+        } catch (Exception e) {
+            prepararRetornoRegistroConError(request, abadiaf, errors, "error.general.aplicacion");
             return mapping.findForward("errorregistro");
         }
+    }
+
+    private ActionForward redirigirAPrincipalOSeguirAlta(ActionMapping mapping,
+                                                         HttpServletRequest request,
+                                                         Usuario usuario,
+                                                         MessageResources resource,
+                                                         AbadiaBBean oAbadiaBBean,
+                                                         AbadiaActForm abadiaf,
+                                                         ActionMessages errors) {
+        try {
+            Abadia abadiaSesion = oAbadiaBBean.recuperarAbadiaDeUsuario(usuario, resource);
+            request.getSession().setAttribute(Constantes.USER_KEY, usuario);
+            request.getSession().setAttribute(Constantes.ABADIA, abadiaSesion);
+            return mapping.findForward("principal");
+        } catch (AbadiaException e) {
+            log.error("RegistroAbadiaAction. Estado inconsistente: el usuario figura con abadia pero no puede recuperarse", e);
+            request.getSession().removeAttribute(Constantes.ABADIA);
+            prepararRetornoRegistroConError(request, abadiaf, errors, "error.general.noabadia");
+            return mapping.findForward("errorregistro");
+        }
+    }
+
+    private void prepararRetornoRegistroConError(HttpServletRequest request,
+                                                  AbadiaActForm abadiaf,
+                                                  ActionMessages errors,
+                                                  String claveError) {
+        HashMap hmRequest = new HashMap();
+        try {
+            hmRequest = new UsuarioBBean().cargarTablasRegistro();
+        } catch (AbadiaException ignored) {
+            // Si falla la recarga de catalogos, mantenemos el mensaje de error y la sesion.
+        }
+        request.getSession().setAttribute("nombre_abadia", abadiaf != null ? abadiaf.getNombreAbadia() : null);
+        request.getSession().setAttribute("regiones", hmRequest.get("regiones"));
+        request.getSession().setAttribute("ordenes", hmRequest.get("ordenes"));
+        request.getSession().setAttribute("actividades", hmRequest.get("actividades"));
+        errors.add(ActionErrors.GLOBAL_MESSAGE, new ActionMessage(claveError));
+        saveErrors(request, errors);
     }
 }

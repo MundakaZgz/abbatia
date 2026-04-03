@@ -11,8 +11,8 @@
 <HTML>
 <HEAD>
     <TITLE><bean:message key="guardias.titulo"/></TITLE>
-    <link REL="STYLESHEET" HREF="/theme/style-global.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/style-revised.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-global.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-revised.css" TYPE="text/css"/>
 </HEAD>
 <BODY bgcolor="#E1C08B">
 

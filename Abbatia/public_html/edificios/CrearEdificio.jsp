@@ -10,8 +10,8 @@
 
 <head>
     <title><bean:message key="edificios.abadia.construir.titulo"/></title>
-    <link REL="STYLESHEET" HREF="/theme/style-global.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/style-revised.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-global.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-revised.css" TYPE="text/css"/>
 </head>
 <body>
 <div id="container">
@@ -35,7 +35,7 @@
                     <td>
                         <p class="textCenter">
                             <img border="0"
-                                 src="images/mapas/<bean:write name='Edificio' property='grafico_construccion'/>_1.gif"
+                                 src="/images/mapas/<bean:write name='Edificio' property='grafico_construccion'/>_1.gif"
                                  alt="<bean:write name='Edificio' property='nombre_edificio'/>"/> <br/> <br/>
                             <bean:write name="Edificio" property="descripcion_edificio"/>
                         </p>

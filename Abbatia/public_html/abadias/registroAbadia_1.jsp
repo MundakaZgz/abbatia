@@ -10,8 +10,8 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
-    <link rel="stylesheet" href="/theme/style-global.css" type="text/css"/>
-    <link rel="stylesheet" href="/theme/style-revised.css" type="text/css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/theme/style-global.css" type="text/css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/theme/style-revised.css" type="text/css"/>
     <title><bean:message key="registro.abadia.titulo"/></title>
 </head>
 <body>

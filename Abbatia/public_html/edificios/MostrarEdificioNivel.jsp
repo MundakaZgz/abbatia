@@ -10,9 +10,9 @@
     <title>
         <bean:message key="edificios.abadia.mostrar.titulo"/>
     </title>
-    <link REL="STYLESHEET" HREF="/theme/styles.css" TYPE="text/css"/>
-    <link rel="stylesheet" href="/theme/style-global.css" type="text/css"/>
-    <link rel="stylesheet" href="/theme/style-revised.css" type="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/styles.css" TYPE="text/css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/theme/style-global.css" type="text/css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/theme/style-revised.css" type="text/css"/>
 
 </head>
 <body topmargin="2" leftmargin="2" bgcolor="#E1C08B" text="#000000">
@@ -43,7 +43,7 @@
         <tr>
             <td align="center" bgcolor="#E4CFA2">
                 <img border="0" alt="<bean:write name="Edificio" property="descripcion"/>"
-                     SRC="images/mapas/<bean:write name="Edificio" property="grafico_construccion"/>_<bean:write name="Edificio" property="nivel"/>.gif"/><br/><br>
+                     SRC="/images/mapas/<bean:write name="Edificio" property="grafico_construccion"/>_<bean:write name="Edificio" property="nivel"/>.gif"/><br/><br>
                 <b><bean:write name="Edificio" property="nombre" filter="false"/></b>
 
             </td>

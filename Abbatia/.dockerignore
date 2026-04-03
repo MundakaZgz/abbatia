@@ -1,0 +1,32 @@
+# Artefactos de build
+target/
+*.war
+*.jar
+
+# Ficheros de IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+*.jpr
+
+# Secretos locales
+.env
+
+# Ficheros de backup y temporales
+projectFilesBackup/
+**/*.bak
+**/*.tmp
+
+# Datos de la BD (no se incluyen en la imagen; se montan o inicializan por separado)
+script_bdd/
+
+# Carpetas de entornos/despliegue que no son el build actual
+dv/
+it/
+pr/
+
+# Ficheros del workspace
+.vscode/
+.devcontainer/
+README.md

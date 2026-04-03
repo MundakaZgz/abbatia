@@ -45,7 +45,7 @@
     <div class="infoEntrada">
         <h4>
             <bean:message key="principal.portal.novedades"/>
-            <a href="index_main.do?param=novedad"><img src="images/iconos/16/corner_right.gif"
+            <a href="index_main.do?param=novedad"><img src="/images/iconos/16/corner_right.gif"
                                                        alt="<bean:message key="principal.portal.vermas"/>"/></a></h4>
         <logic:iterate id="novedades" name="DatosInicio" property="ultimasNovedades">
             <h5>
@@ -68,7 +68,7 @@
     <div class="infoEntrada">
         <h4>
             <bean:message key="principal.portal.acontecimientos"/>
-            <a href="/index_main.do?param=mensaje"><img src="images/iconos/16/corner_right.gif"
+            <a href="/index_main.do?param=mensaje"><img src="/images/iconos/16/corner_right.gif"
                                                         alt="<bean:message key="principal.portal.vermas"/>"/></a></h4>
 
         <div id="mensajes">
@@ -90,7 +90,7 @@
     <div class="infoEntrada">
         <h4>
             <bean:message key="principal.portal.foros"/>
-            <a href="http://foros.abbatia.net"><img src="images/iconos/16/corner_right.gif"
+            <a href="http://foros.abbatia.net"><img src="/images/iconos/16/corner_right.gif"
                                                     alt="<bean:message key="principal.portal.vermas"/>"/></a></h4>
         <iframe src="http://foros.abbatia.net/last_connections.php" width="100%" height="500" scrolling="auto">
             [Your user agent does not support frames or is currently configured not to display frames. However, you may
@@ -150,7 +150,7 @@
         </h4>
 
         <div class="floatLeft" style="width: 20%">
-            <img alt="" src="images/grial.gif"/>
+            <img alt="" src="/images/grial.gif"/>
         </div>
         <div class="floatRight" style="width: 75%">
             <ol>
@@ -203,7 +203,7 @@
         <div id="publicidad">
             <html:link action="/Publicidad" target="_blank" paramId="id" paramName="Banner125" paramProperty="id">
                 <img border=0 alt="<bean:write property="hint" name="Banner125" filter="false" />"
-                     src="images/publicidad/<bean:write property="imagen" name="Banner125" filter="false" />"/>
+                     src="/images/publicidad/<bean:write property="imagen" name="Banner125" filter="false" />"/>
             </html:link>
             <br/>
          </div>
@@ -260,7 +260,7 @@
 <%--<div id="banner468">
     <html:link action="/Publicidad" target="_blank" paramId="id" paramName="Banner468" paramProperty="id">
         <img border=0 alt="<bean:write property="hint" name="Banner468" filter="false" />"
-             src="images/publicidad/<bean:write property="imagen" name="Banner468" filter="false" />"/>
+             src="/images/publicidad/<bean:write property="imagen" name="Banner468" filter="false" />"/>
     </html:link>
 </div>--%>
 <div class="break"></div>
@@ -284,22 +284,22 @@
 <div id="tecnologias">
     <div class="floatLeft" style="width: 24%; text-align: center;">
         <a href="http://www.debian.org/" target="_blank">
-            <img src="images/ads/debian.jpg" alt="Logo Debian"/>
+            <img src="/images/ads/debian.jpg" alt="Logo Debian"/>
             <br/>Debian</a>
     </div>
     <div class="floatLeft" style="width: 24%; text-align: center;">
         <a href="http://jakarta.apache.org/tomcat/" target="_blank">
-            <img border="0" src="images/ads/tomcat.gif" alt="Logo Apache/Tomcat"/>
+            <img border="0" src="/images/ads/tomcat.gif" alt="Logo Apache/Tomcat"/>
             <br/>Apache Tomcat/5.5.17</a>
     </div>
     <div class="floatLeft" style="width: 24%; text-align: center;">
         <a href="http://jakarta.apache.org/struts/" target="_blank">
-            <img border="0" src="images/ads/struts.gif" alt="Logo Struts"/>
+            <img border="0" src="/images/ads/struts.gif" alt="Logo Struts"/>
             <br/>Struts 1.2</a>
     </div>
     <div class="floatLeft" style="width: 24%; text-align: center;">
         <a href="http://www.mysql.org/" target="_blank">
-            <img border="0" src="images/ads/mysql.png" alt="Logo mySQL"/>
+            <img border="0" src="/images/ads/mysql.png" alt="Logo mySQL"/>
             <br/>MySQL</a>
     </div>
     <div class="break"></div>

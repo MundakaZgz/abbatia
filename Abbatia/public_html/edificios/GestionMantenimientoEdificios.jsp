@@ -15,10 +15,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
     <title><bean:message key="edificios.abadia.mantenimiento.titulo"/></title>
-    <script src="/theme/prototype-1.6.0.2.js" type="text/javascript"></script>
-    <script src="/theme/number-functions.js" type="text/javascript"></script>
-    <link REL="STYLESHEET" HREF="/theme/style-global.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/style-revised.css" TYPE="text/css"/>
+    <script src="${pageContext.request.contextPath}/theme/prototype-1.6.0.2.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/theme/number-functions.js" type="text/javascript"></script>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-global.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-revised.css" TYPE="text/css"/>
 </head>
 <body>
 <div id="container">

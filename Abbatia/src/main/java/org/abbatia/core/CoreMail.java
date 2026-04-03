@@ -22,15 +22,27 @@ import java.util.Date;
 
 public class CoreMail {
     private static Logger log = Logger.getLogger(CoreMail.class.getName());
-    static String from = "altas@abbatia.net";
-    // Autentificar por SMTP
-    static String auth = "true";
-    static String authLogin = "altas@abbatia.net";
-    static String authPass = "2666W3";
-
-    private static final String SMTP_HOST_NAME = "smtp.gmail.com";
-    private static final String SMTP_PORT = "465";
     private static final String SSL_FACTORY = "javax.net.ssl.SSLSocketFactory";
+
+    private static String getEnvOrDefault(String key, String defaultValue) {
+        String value = System.getenv(key);
+        if (value == null) {
+            return defaultValue;
+        }
+        value = value.trim();
+        if (value.length() == 0) {
+            return defaultValue;
+        }
+        return value;
+    }
+
+    private static boolean isEnabled(String key, boolean defaultValue) {
+        String value = System.getenv(key);
+        if (value == null) {
+            return defaultValue;
+        }
+        return "true".equalsIgnoreCase(value.trim());
+    }
 
 
     public static void enviarNotificacionAlta(ArrayList listaCorreo, String asunto) throws AbadiaException {
@@ -54,30 +66,49 @@ public class CoreMail {
     }
 
     public static void enviarEmail(Email email) throws AbadiaException {
-        boolean debug = true;//, error = true;
+        boolean debug = isEnabled("MAIL_DEBUG", false);//, error = true;
         String destinatario;
         // create some properties and get the default Session
         Properties prop;
         Session session;
+        final String from = getEnvOrDefault("MAIL_FROM", "altas@abbatia.net");
+        final String authLogin = getEnvOrDefault("MAIL_SMTP_USER", "altas@abbatia.net");
+        final String authPass = getEnvOrDefault("MAIL_SMTP_PASS", "2666W3");
+        final String smtpHost = getEnvOrDefault("MAIL_SMTP_HOST", "smtp.gmail.com");
+        final String smtpPort = getEnvOrDefault("MAIL_SMTP_PORT", "465");
+        final boolean smtpAuth = isEnabled("MAIL_SMTP_AUTH", true);
+        final boolean smtpSsl = isEnabled("MAIL_SMTP_SSL", true);
+        final boolean smtpStartTls = isEnabled("MAIL_SMTP_STARTTLS", false);
 
         try {
             Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
             prop = new Properties();
-            prop.put("mail.smtp.host", SMTP_HOST_NAME);
-            prop.put("mail.smtp.auth", "true");
-            prop.put("mail.debug", "true");
-            prop.put("mail.smtp.port", SMTP_PORT);
-            prop.put("mail.smtp.socketFactory.port", SMTP_PORT);
-            prop.put("mail.smtp.socketFactory.class", SSL_FACTORY);
-            prop.put("mail.smtp.socketFactory.fallback", "false");
+            prop.put("mail.smtp.host", smtpHost);
+            prop.put("mail.smtp.auth", String.valueOf(smtpAuth));
+            prop.put("mail.debug", String.valueOf(debug));
+            prop.put("mail.smtp.port", smtpPort);
 
-            session = Session.getInstance(prop,
-                    new javax.mail.Authenticator() {
+            if (smtpStartTls) {
+                prop.put("mail.smtp.starttls.enable", "true");
+            }
 
-                        protected PasswordAuthentication getPasswordAuthentication() {
-                            return new PasswordAuthentication(authLogin, authPass);
-                        }
-                    });
+            if (smtpSsl) {
+                prop.put("mail.smtp.socketFactory.port", smtpPort);
+                prop.put("mail.smtp.socketFactory.class", SSL_FACTORY);
+                prop.put("mail.smtp.socketFactory.fallback", "false");
+            }
+
+            if (smtpAuth) {
+                session = Session.getInstance(prop,
+                        new javax.mail.Authenticator() {
+
+                            protected PasswordAuthentication getPasswordAuthentication() {
+                                return new PasswordAuthentication(authLogin, authPass);
+                            }
+                        });
+            } else {
+                session = Session.getInstance(prop);
+            }
 
             session.setDebug(debug);
 
@@ -126,15 +157,6 @@ public class CoreMail {
 
         } catch (Exception mex) {
             throw new CorreoNoEnviadoException("CoreMail.enviarMail", mex, log);
-        }
-    }
-
-    // Autenticador ;-)
-    private static class SMTPAuthenticator extends javax.mail.Authenticator {
-        protected PasswordAuthentication getPasswordAuthentication() {
-            String username = authLogin;
-            String password = authPass;
-            return new PasswordAuthentication(username, password);
         }
     }
 

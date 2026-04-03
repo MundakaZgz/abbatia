@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * Created by Benjamín Rodríguez.
+ * Created by Benjamï¿½n Rodrï¿½guez.
  * User: benjamin
  * Date: 24-may-2008
  * Time: 21:06:39
@@ -119,7 +119,7 @@ public class AbadiaBBean {
 
             if (p_afDatosFiltro.getBusqueda() == 1) {
                 nrAbadias = oUtilsAD.getSQL("Select Count(*) from abadia, usuario where abadia.usuarioid=usuario.usuarioid and usuario.abadia_congelada=0 and " + sSQLRegion + " abadia.nombre like '%" + p_afDatosFiltro.getSearch() + "%'", 0);
-                // Directamente a la opción
+                // Directamente a la opciï¿½n
                 if (nrAbadias == 1) {
                     iAbadiaId = oUtilsAD.getSQL("Select abadia.abadiaid from abadia, usuario where abadia.usuarioid=usuario.usuarioid and usuario.abadia_congelada=0 and " + sSQLRegion + " abadia.nombre like '%" + p_afDatosFiltro.getSearch() + "%'", 0);
                     Utilidades.eliminarRegistroContext(p_oUsuario.getNick());
@@ -253,6 +253,27 @@ public class AbadiaBBean {
         }
     }
 
+            public Abadia recuperarAbadiaDeUsuario(Usuario p_oUsuario, MessageResources p_oResource) throws AbadiaException {
+                String sTrace = this.getClass() + ".recuperarAbadiaDeUsuario()";
+                String msgLog = "Entrando en metodo: " + sTrace;
+                log.info(msgLog);
+
+                adAbadia oAbadiaAD;
+                Connection con = null;
+
+                try {
+                    con = ConnectionFactory.getConnection(Constantes.DB_CONEXION_ABADIAS);
+                    oAbadiaAD = new adAbadia(con);
+                    return oAbadiaAD.recuperarAbadiaDeUsuario(p_oUsuario, p_oResource);
+                } catch (AbadiaException e) {
+                    throw new AbadiaSQLException(sTrace, e, log);
+                } finally {
+                    DBMSUtils.cerrarObjetoSQL(con);
+                    msgLog = "Saliendo de metodo: " + sTrace;
+                    log.info(msgLog);
+                }
+            }
+
     public void congelarAbadia(int p_iOpcion, long p_lUsuarioId, int p_iAbadiaId) throws AbadiaException {
         String sTrace = this.getClass() + ".congelarAbadia()";
         String msgLog = "Entrando en metodo: " + sTrace;
@@ -292,14 +313,14 @@ public class AbadiaBBean {
                 sSQL += "WHERE usuarioid=" + p_lUsuarioId;
             }
             oUtilsAD.execSQL(sSQL);
-            //si se congela la abadía...
+            //si se congela la abadï¿½a...
             if (p_iOpcion == 1) {
                 //proceso para expulsar a los monges de visita y los de viaje.
                 //1 - Recuperar la lista de monjes que visitan la abadia
                 oMonjeAD = new adMonje(con);
                 oViajarAD = new adViajar(con);
                 listaMonjesInvitados = oMonjeAD.recuperarMonjesInvitados(1, p_iAbadiaId);
-                //2 - Recuperar la lista de monjes que están de viaje
+                //2 - Recuperar la lista de monjes que estï¿½n de viaje
                 listaMonjesVisita = oMonjeAD.recuperarMonjesVisita(1, p_iAbadiaId);
                 for (MonjeInicio monjeInicio : listaMonjesInvitados) {
                     oViajarAD.forzarVueltaProceso(monjeInicio, Constantes.FORZAR_RETORNO_ABADIA_CONGELADA_PROPIA);
@@ -377,8 +398,8 @@ public class AbadiaBBean {
             con = ConnectionFactory.getConnection(Constantes.DB_CONEXION_ABADIAS);
 
             oViajarAD = new adViajar(con);
-            //antes de eliminar la abadía, deben ser expulsados todos los monjes de visita y devueltos a casa los que están por ahí...
-            //consultamos si existen monjes que visiten la abadía..
+            //antes de eliminar la abadï¿½a, deben ser expulsados todos los monjes de visita y devueltos a casa los que estï¿½n por ahï¿½...
+            //consultamos si existen monjes que visiten la abadï¿½a..
             if (oViajarAD.monjesViajando(p_oAbadia) || oViajarAD.monjesVisita(p_oAbadia)) {
                 throw new AbadiaConVisitantesException("No se puede eliminar la abbatia mientras tenga visitantes", log);
             }
@@ -417,9 +438,9 @@ public class AbadiaBBean {
             if (p_szBorr.compareTo("1") == 0)
                 oMensajesAD.eliminarMensajesDeAbadia(p_oAbadia.getIdDeAbadia());   // Todos
             if (p_szBorr.compareTo("2") == 0)
-                oMensajesAD.eliminarMensajesDeAbadia(p_oAbadia.getIdDeAbadia(), 0);   // Sólo los informativos
+                oMensajesAD.eliminarMensajesDeAbadia(p_oAbadia.getIdDeAbadia(), 0);   // Sï¿½lo los informativos
             if (p_szBorr.compareTo("3") == 0)
-                oMensajesAD.eliminarMensajesDeAbadiaAntiguos(p_oAbadia.getIdDeAbadia());   // Los que tienen más de un mes
+                oMensajesAD.eliminarMensajesDeAbadiaAntiguos(p_oAbadia.getIdDeAbadia());   // Los que tienen mï¿½s de un mes
 
             oInicioContentsAD = new adInicioContents(con);
             oInicioContents = oInicioContentsAD.getInicioContents(p_oAbadia, p_szMens, p_oUsuario, p_oResource);
@@ -433,7 +454,7 @@ public class AbadiaBBean {
             oEleccionesAD = new adElecciones(con);
             hmRequest.put("Elecciones", Integer.toString(oEleccionesAD.hayElecciones(p_oAbadia.getIdDeRegion())));
 
-            // Cónclave
+            // Cï¿½nclave
             oPapaAD = new adPapa(con);
             int Conclave = oPapaAD.estadoConclave();
             if (Conclave != 0) {
@@ -564,7 +585,7 @@ public class AbadiaBBean {
             if (oAbadiaAD.existeAbadia(p_afAbadia.getNombreAbadia())) {
                 hmRequest = new HashMap<String, ArrayList<Table>>();
                 oUtilsAD = new adUtils(con);
-                hmRequest.put("regiones", oUtilsAD.getTableRegionMenosUso());
+                hmRequest.put("regiones", oUtilsAD.getTableRegion());
                 hmRequest.put("ordenes", oUtilsAD.getTable(Constantes.TABLA_ORDEN));
                 hmRequest.put("actividades", oUtilsAD.getClaveValor(Constantes.TABLA_ACTIVIDAD));
                 return hmRequest;
@@ -628,9 +649,9 @@ public class AbadiaBBean {
 
             p_afAbadia.setUsuarioid(p_oUsuario.getIdDeUsuario());
             if (!oAbadiaAD.existeAbadia(p_afAbadia.getNombreAbadia())) {
-                //volvemos a validar si la región seleccionada está en la lista de las posibles.
+                // Validamos contra el catalogo completo de regiones disponible para el alta.
                 oUtilsAD = new adUtils(con);
-                alRegiones = oUtilsAD.getTableRegionMenosUso();
+                alRegiones = oUtilsAD.getTableRegion();
                 bRegionOK = false;
                 for (Table tTabla : alRegiones) {
                     if (tTabla.getId() == p_afAbadia.getRegion()) {
@@ -674,7 +695,7 @@ public class AbadiaBBean {
                 msg.setMensaje(p_oResource.getMessage("mensajes.info.bienvenida2"));
                 oMensajeAD.crearMensaje(msg);
 
-                //todo añadir el envío de un mensaje a todos los jugadores de la región
+                //todo aï¿½adir el envï¿½o de un mensaje a todos los jugadores de la regiï¿½n
                 msg.setFechaAbadia(CoreTiempo.getTiempoAbadiaStringConHoras());
                 msg.setFechaReal(CoreTiempo.getTiempoRealStringConHoras());
                 msg.setIdDeIdioma(1);

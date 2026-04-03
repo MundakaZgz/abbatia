@@ -10,7 +10,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
     <title>untitled</title>
-    <link REL="STYLESHEET" HREF="/theme/styles.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/styles.css" TYPE="text/css"/>
 </head>
 <body bgcolor="#E1C08B">
 <center>

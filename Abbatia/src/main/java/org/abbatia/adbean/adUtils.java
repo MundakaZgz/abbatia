@@ -17,7 +17,7 @@ public class adUtils extends adbeans {
     private static Logger log = Logger.getLogger(adUtils.class.getName());
 
     /**
-     * Instancia la clase sin obtener una nueva conexión
+     * Instancia la clase sin obtener una nueva conexiï¿½n
      *
      * @param con
      * @throws AbadiaException
@@ -48,7 +48,7 @@ public class adUtils extends adbeans {
             ArrayList<Table> alTable = new ArrayList<Table>();
             Table tabla = null;
             while (rs.next()) {
-                tabla = new Table(rs.getInt(1), rs.getString(2));
+                tabla = new Table(rs.getInt("id"), rs.getString("descripcion"));
                 alTable.add(tabla);
             }
             return alTable;
@@ -142,7 +142,7 @@ public class adUtils extends adbeans {
     }
 
     /*
-          Metodo que devuelve una descripción de la Tabla directamente sin crear clases ni na!
+          Metodo que devuelve una descripciï¿½n de la Tabla directamente sin crear clases ni na!
           JOHN 05-05-2004
     */
 
@@ -170,7 +170,7 @@ public class adUtils extends adbeans {
 
     /*
           Metodo que devuelve un SQL directamente sin crear clases ni na!
-          devuelve un string o un entero ( está sobrecargado )
+          devuelve un string o un entero ( estï¿½ sobrecargado )
           JOHN 05-05-2004
     */
 
@@ -419,7 +419,7 @@ public class adUtils extends adbeans {
     }
 
     /**
-     * Recuperar un arraylist de integers a partir del sql recibido por parámetro
+     * Recuperar un arraylist de integers a partir del sql recibido por parï¿½metro
      *
      * @param sSQL
      * @return
@@ -446,7 +446,7 @@ public class adUtils extends adbeans {
     }
 
     /*
-          Función que devuelve la propiedad, se sobrecarga el nombre de la propiedad por si lo sabes o no
+          Funciï¿½n que devuelve la propiedad, se sobrecarga el nombre de la propiedad por si lo sabes o no
           JOHN 05-05-2004
     */
 
@@ -584,7 +584,7 @@ public class adUtils extends adbeans {
             }
             return alTable;
         } catch (SQLException e) {
-            throw new AbadiaSQLException("Se ha producido un error buscando los nombre de ciudad para la región.", e, log);
+            throw new AbadiaSQLException("Se ha producido un error buscando los nombre de ciudad para la regiï¿½n.", e, log);
         } finally {
             DBMSUtils.cerrarObjetoSQL(rs);
             DBMSUtils.cerrarObjetoSQL(ps);
@@ -611,7 +611,11 @@ public class adUtils extends adbeans {
                 tabla = new Table(rs.getInt("REGIONID"), rs.getString("DESCRIPCION"));
                 alTable.add(tabla);
             }
-            return alTable;
+            if (!alTable.isEmpty()) {
+                return alTable;
+            }
+            // Instalacion sin abadias: mostrar todas las regiones disponibles
+            return getTableRegion();
         } catch (SQLException e) {
             throw new AbadiaSQLException("adUtils. getTableRegion. SQLException", e, log);
         } finally {
@@ -667,13 +671,13 @@ public class adUtils extends adbeans {
 
     // ___________________________________________________________________________
     //   Pagina de Inicio Index_main.do ( JLO )
-    //     Recupera los valores de todos los objetos de la página de inicio
+    //     Recupera los valores de todos los objetos de la pï¿½gina de inicio
     // ___________________________________________________________________________
 
     public InicioMain getInicioMain(String Param) throws AbadiaException {
         InicioMain Inicio = new InicioMain();
 
-        // Cargar las últimas conexiones
+        // Cargar las ï¿½ltimas conexiones
         String sSQLConex = "Select a.nombre, u.ultimaconexion, u.registrado, u.usuario_tipo, u.abadia_congelada from abadia as a, usuario as u WHERE  a.usuarioid = u.usuarioid ORDER BY u.ULTIMACONEXION desc LIMIT 5";
         String sSQLAbadias = "SELECT a.nombre, u.registrado, u.usuario_tipo, u.abadia_congelada from abadia as a, usuario as u, abadia_puntuacion_ultima ap WHERE u.usuarioid = a.usuarioid and u.usuario_tipo <> 1 and u.usuarioid not in (select usuarioid from usuario_bloqueo) and a.abadiaid = ap.abadiaid order by ap.total desc LIMIT 5";
         String sSQLMensajes = "SELECT m.fechareal, m.mensaje, m.monjeid, a.nombre, m.abadiaid  FROM mensajes m, abadia a WHERE m.abadiaid = a.abadiaid and idiomaid = 1 " +
@@ -756,7 +760,7 @@ public class adUtils extends adbeans {
             }
             Inicio.setUltimosMejoresAbadias(alTable);
 
-            // Recuperar últimos acontecimientos
+            // Recuperar ï¿½ltimos acontecimientos
             ps = con.prepareStatement(sSQLMensajes);
             rs = ps.executeQuery();
             alTable = new ArrayList<Serializable>();
@@ -803,13 +807,13 @@ public class adUtils extends adbeans {
 
 // ___________________________________________________________________________
     //   Pagina de Inicio Index_main.do ( JLO )
-    //     Recupera los valores de todos los objetos de la página de inicio
+    //     Recupera los valores de todos los objetos de la pï¿½gina de inicio
     // ___________________________________________________________________________
 
     public InicioMain getTopUsers(int pagina, int region) throws AbadiaException {
         InicioMain Inicio = new InicioMain();
 
-        // Cargar las últimas conexiones
+        // Cargar las ï¿½ltimas conexiones
         String sSQL, sSQLCount = "";
         if (region == -1) {
             sSQL = "SELECT a.nombre, apu.total, a.regionid, r.descripcion, u.registrado, u.usuario_tipo, u.abadia_congelada from abadia a, usuario u, region r, abadia_puntuacion_ultima apu " +
@@ -1236,7 +1240,7 @@ public class adUtils extends adbeans {
                 }
                 alActividades.add(new TableDouble(rs.getInt(2), rs.getDouble(3)));
             }
-            //nos aseguramos de cargar los datos de la última abadía procesada....
+            //nos aseguramos de cargar los datos de la ï¿½ltima abadï¿½a procesada....
             hmResultado.put(idAbadiaTmp, alActividades);
             return hmResultado;
 
@@ -1269,7 +1273,7 @@ public class adUtils extends adbeans {
                 }
                 alLibros.add(new PuntuacionLibros(rs.getShort(2), rs.getShort(3), rs.getInt(4), rs.getDouble(5)));
             }
-            //nos aseguramos de cargar los datos de la última abadía procesada....
+            //nos aseguramos de cargar los datos de la ï¿½ltima abadï¿½a procesada....
             hmResultado.put(idAbadiaTmp, alLibros);
             return hmResultado;
 

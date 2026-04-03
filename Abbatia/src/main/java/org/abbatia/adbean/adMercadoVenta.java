@@ -21,7 +21,7 @@ public class adMercadoVenta extends adbeans {
     private static Logger log = Logger.getLogger(adUtils.class.getName());
 
     /**
-     * Instancia la clase sin obtener una nueva conexión
+     * Instancia la clase sin obtener una nueva conexiï¿½n
      *
      * @param con
      * @throws AbadiaException
@@ -69,12 +69,13 @@ public class adMercadoVenta extends adbeans {
         ResultSet rs = null;
         try {
             log.debug("adMercadoVenta. getProductos. sMercancia: " + iMercancia);
-            // Queremos visualizar alimentación o por defecto
+            // Queremos visualizar alimentaciï¿½n o por defecto
             if (iMercancia == Constantes.MERCANCIA_ALIMENTOS) {
-                sSQL = "SELECT *, af.descripcion as descfam, l.literal as descedi, at.descripcion as descali, al.estado as estadolote " +
-                        "FROM `alimentos` a, `edificio` e, `edificio_tipo` et, `alimentos_lote` al, `alimentos_tipo` at, `alimentos_familia` af, literales l " +
+                sSQL = "SELECT *, lf.literal as descfam, l.literal as descedi, at.descripcion as descali, al.estado as estadolote " +
+                        "FROM `alimentos` a, `edificio` e, `edificio_tipo` et, `alimentos_lote` al, `alimentos_tipo` at, `alimentos_familia` af, literales l, literales lf " +
                         "Where a.edificioid = e.edificioid and e.tipoedificioid = et.tipoedificioid AND  a.loteid = al.loteid AND  a.alimentoid = at.alimentoid AND af.familiaid=at.familiaid " +
-                        "AND e.abadiaid = ? AND et.NOMBRE = l.LITERALID AND l.IDIOMAID = " + usuario.getIdDeIdioma() + " order by fecha_caducidad";
+                        "AND e.abadiaid = ? AND et.NOMBRE = l.LITERALID AND l.IDIOMAID = " + usuario.getIdDeIdioma() + " " +
+                        "AND lf.literalid = af.literalid AND lf.idiomaid = " + usuario.getIdDeIdioma() + " order by fecha_caducidad";
                 sMerc = Constantes.MERCANCIA_ALIMENTOS_STR;
             } else if (iMercancia == Constantes.MERCANCIA_ANIMALES) {
                 sSQL = "SELECT count(*) as cantidad, ac.descripcion as descali, l.literal as descedi, at.descripcion as descfam, " +
@@ -144,7 +145,7 @@ public class adMercadoVenta extends adbeans {
                 alTable.add(tabla);
             }
             if (alTable.isEmpty()) {
-                sHTML = "<tr><td colspan=7><center>No tienes ningún producto para vender</center><td></tr>";
+                sHTML = "<tr><td colspan=7><center>No tienes ningï¿½n producto para vender</center><td></tr>";
                 tabla = new Table(0, sHTML);
                 alTable.add(tabla);
             }

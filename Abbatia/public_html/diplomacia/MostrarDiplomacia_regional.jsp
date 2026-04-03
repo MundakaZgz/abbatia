@@ -108,14 +108,14 @@
                                 <td align="left">
                                     <html:link action="/popularidadMonje?voto=1" paramId="clave" paramName="Papa"
                                                paramProperty="idDeMonje">
-                                        <html:img border="0" src="images/iconos/16/marca.gif"
+                                        <html:img border="0" src="/images/iconos/16/marca.gif"
                                                   altKey="diplomacia.satisfaccion.si"/>
                                     </html:link>
                                 </td>
                                 <td align="right">
                                     <html:link action="/popularidadMonje?voto=0" paramId="clave" paramName="Papa"
                                                paramProperty="idDeMonje">
-                                        <html:img border="0" src="images/iconos/16/marca_roja.gif"
+                                        <html:img border="0" src="/images/iconos/16/marca_roja.gif"
                                                   altKey="diplomacia.satisfaccion.no"/>
                                     </html:link>
                                 </td>
@@ -279,14 +279,14 @@
                                     <td align="left">
                                         <html:link action="/popularidadMonje?voto=1" paramId="clave"
                                                    paramName="ObispoRegion" paramProperty="idDeMonje">
-                                            <html:img border="0" src="images/iconos/16/marca.gif"
+                                            <html:img border="0" src="/images/iconos/16/marca.gif"
                                                       altKey="diplomacia.satisfaccion.si"/>
                                         </html:link>
                                     </td>
                                     <td align="right">
                                         <html:link action="/popularidadMonje?voto=0" paramId="clave"
                                                    paramName="ObispoRegion" paramProperty="idDeMonje">
-                                            <html:img border="0" src="images/iconos/16/marca_roja.gif"
+                                            <html:img border="0" src="/images/iconos/16/marca_roja.gif"
                                                       altKey="diplomacia.satisfaccion.no"/>
                                         </html:link>
                                     </td>
@@ -341,32 +341,32 @@
                     <tr>
                         <td align="right">
                             <bean:write name="ComisionRegion" property="obispado"/>&nbsp;%
-                            <html:img src="images/iconos/16/ayuda.gif"
+                            <html:img src="/images/iconos/16/ayuda.gif"
                                       altKey="diplomacia.jerarquia.comision.obispado.help"/>
                         </td>
                         <td align="right">
                             <bean:write name="ComisionRegion" property="cancelacion"/>&nbsp;%
-                            <html:img src="images/iconos/16/ayuda.gif"
+                            <html:img src="/images/iconos/16/ayuda.gif"
                                       altKey="diplomacia.jerarquia.comision.cancelacion.help"/>
                         </td>
                         <td align="right">
                             <bean:write name="ComisionRegion" property="venta5"/>&nbsp;%
-                            <html:img src="images/iconos/16/ayuda.gif"
+                            <html:img src="/images/iconos/16/ayuda.gif"
                                       altKey="diplomacia.jerarquia.comision.venta5.help"/>
                         </td>
                         <td align="right">
                             <bean:write name="ComisionRegion" property="venta10"/>&nbsp;%
-                            <html:img src="images/iconos/16/ayuda.gif"
+                            <html:img src="/images/iconos/16/ayuda.gif"
                                       altKey="diplomacia.jerarquia.comision.venta10.help"/>
                         </td>
                         <td align="right">
                             <bean:write name="ComisionRegion" property="venta15"/>&nbsp;%
-                            <html:img src="images/iconos/16/ayuda.gif"
+                            <html:img src="/images/iconos/16/ayuda.gif"
                                       altKey="diplomacia.jerarquia.comision.venta15.help"/>
                         </td>
                         <td align="right">
                             <bean:write name="ComisionRegion" property="transito"/>&nbsp;%
-                            <html:img src="images/iconos/16/ayuda.gif"
+                            <html:img src="/images/iconos/16/ayuda.gif"
                                       altKey="diplomacia.jerarquia.comision.transito.help"/>
                         </td>
 

@@ -91,7 +91,26 @@ public class ResponseCacheFilter implements Filter {
             // writing previously saved cache content to the real response
             response.setContentType(this.contentType);
             response.setCharacterEncoding(this.characterEncoding);
-            out.write(cache.read());
+            try {
+                String cachedResponse = cache.read();
+                if ((cachedResponse != null) && (cachedResponse.length() > 0)) {
+                    out.write(cachedResponse);
+                } else {
+                    // Cache not ready: fail open and process request instead of returning an empty response.
+                    this.logger.warn("ResponseCacheFilter: cache empty, processing request fallback.");
+                    chain.doFilter(request, wrapper);
+                    String currentResponse = wrapper.toString();
+                    cache.write(currentResponse);
+                    out.write(currentResponse);
+                }
+            } catch (RuntimeException ex) {
+                // Avoid breaking request flow when the cache read timeout is reached.
+                this.logger.warn("ResponseCacheFilter: cache read timeout, processing request fallback.", ex);
+                chain.doFilter(request, wrapper);
+                String currentResponse = wrapper.toString();
+                cache.write(currentResponse);
+                out.write(currentResponse);
+            }
         }
 /*
         response.setContentType(this.contentType);

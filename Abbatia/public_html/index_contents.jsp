@@ -233,18 +233,18 @@
     <h4><bean:message key="principal.elecciones.votarPapa"/></h4>
     <h5>
         <logic:equal name="Conclave" value="1">
-            <img src="images/iconos/sanpedro.gif" border="0"/> <br>
+            <img src="/images/iconos/sanpedro.gif" border="0"/> <br>
             <bean:message key="principal.elecciones.votarPapa.estado1"/>
         </logic:equal>
         <logic:equal name="Conclave" value="2">
             <logic:equal name="Fumata" value="0">
-                <img src="images/iconos/sanpedro.gif" border="0"/> <br>
+                <img src="/images/iconos/sanpedro.gif" border="0"/> <br>
             </logic:equal>
             <logic:equal name="Fumata" value="1">
-                <img src="images/iconos/sanpedro_fumatablanca.gif" border="0"/> <br>
+                <img src="/images/iconos/sanpedro_fumatablanca.gif" border="0"/> <br>
             </logic:equal>
             <logic:equal name="Fumata" value="2">
-                <img src="images/iconos/sanpedro_fumatanegro.gif" border="0"/> <br>
+                <img src="/images/iconos/sanpedro_fumatanegro.gif" border="0"/> <br>
             </logic:equal>
             <bean:message key="principal.elecciones.votarPapa.estado2"/>
         </logic:equal>

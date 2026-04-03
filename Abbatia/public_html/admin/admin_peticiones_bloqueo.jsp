@@ -8,13 +8,13 @@
     <logic:forward name="error"/>
 </logic:notPresent>
 
-<link rel="stylesheet" href="/theme/popup.css" type="text/css">
-<script type="text/javascript" src="/theme/overlibmws/overlibmws.js"></script>
-<script type="text/javascript" src="/theme/overlibmws/ajaxcontentmws.js"></script>
-<script type="text/javascript" src="/theme/overlibmws/iframecontentmws.js"></script>
-<script type="text/javascript" src="/theme/overlibmws/overlibmws_draggable.js"></script>
-<script type="text/javascript" src="/theme/overlibmws/overlibmws_scroll.js"></script>
-<script type="text/javascript" src="/theme/popup.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/theme/popup.css" type="text/css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/overlibmws.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/ajaxcontentmws.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/iframecontentmws.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/overlibmws_draggable.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/overlibmws_scroll.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/theme/popup.js"></script>
 
 <script language="javascript" type="text/javascript">
     function crearPeticion() {

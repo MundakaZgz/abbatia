@@ -23,18 +23,18 @@ public class CoreMonje extends adbeans {
         super(con);
     }
 
-    //este metodo creará monjes para una abbatia cuando esta sea creada,
+    //este metodo crearï¿½ monjes para una abbatia cuando esta sea creada,
     //las propiedades de los monjes que se creen deberan ser determinadas
-    //por los parámetros que el usuario determine en la abbatia.
-    //es importante destacar que la creación de estos monjes, no implicará
-    //su alta en la base de datos, ya que este alta se producirá solo
-    //cuando el usuario acepte la composición ofrecida.
+    //por los parï¿½metros que el usuario determine en la abbatia.
+    //es importante destacar que la creaciï¿½n de estos monjes, no implicarï¿½
+    //su alta en la base de datos, ya que este alta se producirï¿½ solo
+    //cuando el usuario acepte la composiciï¿½n ofrecida.
     public ArrayList<Monje> generarMonjesParaAbadia(AbadiaActForm abadia, Usuario usuario) throws AbadiaException {
         //CoreTiempo tiempo = new CoreTiempo();
 
         configuracion = new AbadiaConfiguracionXML();
 
-        //abrimos una conexión general
+        //abrimos una conexiï¿½n general
         //adbeans ad = new adbeans();
 
         adUtils util;
@@ -215,7 +215,7 @@ public class CoreMonje extends adbeans {
 
             monjes.add(monje);
 
-            //cerramos la conexión general
+            //cerramos la conexiï¿½n general
             //ad.finalize();
 
             return monjes;
@@ -268,6 +268,10 @@ public class CoreMonje extends adbeans {
     }
 
     public static String getNombreAleatorio(ArrayList<Table> TablaNombres) {
+        if (TablaNombres == null || TablaNombres.isEmpty()) {
+            // Evita excepciones en altas cuando faltan catÃ¡logos regionales en una instalaciÃ³n mÃ­nima.
+            return "Frater";
+        }
         Table nombre = TablaNombres.get(r.nextInt(TablaNombres.size()));
         return nombre.getDescription();
     }

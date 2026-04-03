@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 // Abbatia
 
 
@@ -66,7 +68,8 @@ public class MostrarMonjeAction extends Action {
 
         try {
             oMonjeBBean = new MonjeBBean();
-            hmRequest = oMonjeBBean.recuperarDetalleMonje(Integer.parseInt(sClave), sAction, abadia, usuario, resource);
+            int idMonje = parseIdMonje(sClave);
+            hmRequest = oMonjeBBean.recuperarDetalleMonje(idMonje, sAction, abadia, usuario, resource);
 
             request.getSession().setAttribute("hayabad", hmRequest.get("hayabad"));
 
@@ -128,5 +131,24 @@ public class MostrarMonjeAction extends Action {
             saveMessages(request.getSession(), mensajes);
             return mapping.findForward("error");
         }
+    }
+
+    private int parseIdMonje(String sClave) {
+        if (sClave == null) {
+            throw new NumberFormatException("clave nula");
+        }
+
+        String clave = sClave.trim();
+        if (clave.length() == 0) {
+            throw new NumberFormatException("clave vacia");
+        }
+
+        // Algunas rutas llegan con sufijos no numéricos (ej. "20 00:00:00.0").
+        Matcher matcher = Pattern.compile("\\d+").matcher(clave);
+        if (!matcher.find()) {
+            throw new NumberFormatException("clave sin digitos: " + clave);
+        }
+
+        return Integer.parseInt(matcher.group());
     }
 }

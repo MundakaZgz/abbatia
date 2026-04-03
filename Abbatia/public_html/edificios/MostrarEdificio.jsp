@@ -17,25 +17,25 @@
     <title>
         <bean:message key="edificios.abadia.mostrar.titulo"/>
     </title>
-    <link REL="STYLESHEET" HREF="/theme/style-global.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/style-revised.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/layout.css" TYPE="text/css"/>
-    <link rel="STYLESHEET" href="/theme/popup.css" type="text/css">
-    <script type="text/javascript" src="/theme/overlibmws/overlibmws.js"></script>
-    <script type="text/javascript" src="/theme/overlibmws/ajaxcontentmws.js"></script>
-    <script type="text/javascript" src="/theme/overlibmws/iframecontentmws.js"></script>
-    <script type="text/javascript" src="/theme/overlibmws/overlibmws_draggable.js"></script>
-    <script type="text/javascript" src="/theme/overlibmws/overlibmws_scroll.js"></script>
-    <script type="text/javascript" src="/theme/popup.js"></script>
-    <script type="text/javascript" src="/theme/displaytagex.js"></script>
-    <script type="text/javascript" src="/theme/prototype.js"></script>
-    <script type="text/javascript" src="/theme/number-functions.js"></script>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-global.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-revised.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/layout.css" TYPE="text/css"/>
+    <link rel="STYLESHEET" href="${pageContext.request.contextPath}/theme/popup.css" type="text/css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/overlibmws.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/ajaxcontentmws.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/iframecontentmws.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/overlibmws_draggable.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/overlibmws_scroll.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/popup.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/displaytagex.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/prototype.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/number-functions.js"></script>
 
-    <script src="/theme/popup/prototype.js" type="text/javascript"></script>
-    <script src="/theme/popup/effects.js" type="text/javascript"></script>
-    <script src="/theme/popup/dragdrop.js" type="text/javascript"></script>
-    <script src="/theme/popup/popup.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="/theme/popup/popup.css" type="text/css"/>
+    <script src="${pageContext.request.contextPath}/theme/popup/prototype.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/theme/popup/effects.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/theme/popup/dragdrop.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/theme/popup/popup.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/theme/popup/popup.css" type="text/css"/>
 
 
     <script type="text/javascript">
@@ -125,7 +125,7 @@
 
     <div class="floatLeft" style="width: 30%">
         <img alt="<bean:write name="Edificio" property="descripcion"/>"
-             SRC="images/mapas/<bean:write name="Edificio" property="grafico_construccion"/>_<bean:write name="Edificio" property="nivel"/>.gif"/><br/>
+             SRC="/images/mapas/<bean:write name="Edificio" property="grafico_construccion"/>_<bean:write name="Edificio" property="nivel"/>.gif"/><br/>
 
         <h6><bean:write name="Edificio" property="nombre" filter="false"/></h6>
     </div>

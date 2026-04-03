@@ -24,7 +24,7 @@
             <table border="0" width="100%">
                 <tr>
                     <td width="50%" align="center">
-                        <img border="0" src="images/iconos/16/monedas.jpg"
+                        <img border="0" src="/images/iconos/16/monedas.jpg"
                              alt="<bean:message key="principal.hint.moneda"/>"/>
                     </td>
                     <td width="50%" align="right">

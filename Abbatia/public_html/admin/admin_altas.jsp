@@ -17,9 +17,9 @@
 <head>
     <title><bean:message key="mercado.compra.titulo"/></title>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
-    <link REL="STYLESHEET" HREF="/theme/style-global.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/style-revised.css" TYPE="text/css"/>
-    <script type="text/javascript" src="/theme/overlib/overlib.js"><!-- overLIB (c) Erik Bosrup --></script>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-global.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-revised.css" TYPE="text/css"/>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlib/overlib.js"><!-- overLIB (c) Erik Bosrup --></script>
 </head>
 
 <html:html xhtml="http://www.w3.org/1999/xhtml">

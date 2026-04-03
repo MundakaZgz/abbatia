@@ -10,7 +10,7 @@
 <html>
 <head>
     <title></title>
-    <link REL="STYLESHEET" HREF="/theme/styles.css" TYPE="text/css">
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/styles.css" TYPE="text/css">
 </head>
 <body topmargin="2" leftmargin="2" bgcolor="#E1C08B" text="#000000">
 <br/>

@@ -10,7 +10,7 @@
     <title>
         <bean:message key="edificios.abadia.mostrar.titulo"/>
     </title>
-    <link REL="STYLESHEET" HREF="/theme/styles.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/styles.css" TYPE="text/css"/>
 </head>
 <body topmargin="2" leftmargin="2" bgcolor="#E1C08B" text="#000000">
 <center>
@@ -27,7 +27,7 @@
     <tr>
         <td align="center" bgcolor="#E4CFA2">
             <img border="0"
-                 SRC="images/libros/<bean:write name="libroDetalle" property="grafico"/>_<bean:write name="libroDetalle" property="nivel"/>.gif"/><br/><br>
+                 SRC="/images/libros/<bean:write name="libroDetalle" property="grafico"/>_<bean:write name="libroDetalle" property="nivel"/>.gif"/><br/><br>
             <b><bean:write name="libroDetalle" property="nombreLibro"/></b>
         </td>
         <td bgcolor="#E4CFA2">

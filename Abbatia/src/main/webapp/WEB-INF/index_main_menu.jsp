@@ -18,20 +18,20 @@
 <center>
 <table border=0>
 <tr>
-  <td><html:link action="/idioma?param=idioma&id=es" target="_top"><html:img src="images/iconos/16/es.gif" border="0" altKey="tooltip.idioma_es"/></html:link></td>
-  <td><html:link action="/idioma?param=idioma&id=ct" target="_top"><html:img src="images/iconos/16/ct.gif" border="0" altKey="tooltip.idioma_ct"/></html:link></td>
-  <td><html:link action="/idioma?param=idioma&id=gl" target="_top"><html:img src="images/iconos/16/gl.gif" border="0" altKey="tooltip.idioma_gl"/></html:link></td>
-  <td><html:link action="/idioma?param=idioma&id=ek" target="_top"><html:img src="images/iconos/16/ek.gif" border="0" altKey="tooltip.idioma_ek"/></html:link></td>
-  <td><html:link action="/idioma?param=idioma&id=lt" target="_top"><html:img src="images/iconos/16/vt.gif" border="0" altKey="tooltip.idioma_lt"/></html:link></td>
+  <td><html:link action="/idioma?param=idioma&id=es" target="_top"><html:img src="/images/iconos/16/es.gif" border="0" altKey="tooltip.idioma_es"/></html:link></td>
+  <td><html:link action="/idioma?param=idioma&id=ct" target="_top"><html:img src="/images/iconos/16/ct.gif" border="0" altKey="tooltip.idioma_ct"/></html:link></td>
+  <td><html:link action="/idioma?param=idioma&id=gl" target="_top"><html:img src="/images/iconos/16/gl.gif" border="0" altKey="tooltip.idioma_gl"/></html:link></td>
+  <td><html:link action="/idioma?param=idioma&id=ek" target="_top"><html:img src="/images/iconos/16/ek.gif" border="0" altKey="tooltip.idioma_ek"/></html:link></td>
+  <td><html:link action="/idioma?param=idioma&id=lt" target="_top"><html:img src="/images/iconos/16/vt.gif" border="0" altKey="tooltip.idioma_lt"/></html:link></td>
 </tr>
 <!--/table>
 <table border=0-->
 <tr>
-  <td><html:link action="/idioma?param=idioma&id=us" target="_top"><html:img src="images/iconos/16/us.gif" border="0" altKey="tooltip.idioma_us"/></html:link></td>
-  <td><html:link action="/idioma?param=idioma&id=fr" target="_top"><html:img src="images/iconos/16/fr.gif" border="0" altKey="tooltip.idioma_fr"/></html:link></td>
-  <td><html:link action="/idioma?param=idioma&id=de" target="_top"><html:img src="images/iconos/16/de.gif" border="0" altKey="tooltip.idioma_de"/></html:link></td>
-  <td><html:link action="/idioma?param=idioma&id=it" target="_top"><html:img src="images/iconos/16/it.gif" border="0" altKey="tooltip.idioma_it"/></html:link></td>
-  <td><html:link action="/idioma?param=idioma&id=pt" target="_top"><html:img src="images/iconos/16/pt.gif" border="0" altKey="tooltip.idioma_pt"/></html:link></td>
+  <td><html:link action="/idioma?param=idioma&id=us" target="_top"><html:img src="/images/iconos/16/us.gif" border="0" altKey="tooltip.idioma_us"/></html:link></td>
+  <td><html:link action="/idioma?param=idioma&id=fr" target="_top"><html:img src="/images/iconos/16/fr.gif" border="0" altKey="tooltip.idioma_fr"/></html:link></td>
+  <td><html:link action="/idioma?param=idioma&id=de" target="_top"><html:img src="/images/iconos/16/de.gif" border="0" altKey="tooltip.idioma_de"/></html:link></td>
+  <td><html:link action="/idioma?param=idioma&id=it" target="_top"><html:img src="/images/iconos/16/it.gif" border="0" altKey="tooltip.idioma_it"/></html:link></td>
+  <td><html:link action="/idioma?param=idioma&id=pt" target="_top"><html:img src="/images/iconos/16/pt.gif" border="0" altKey="tooltip.idioma_pt"/></html:link></td>
 </tr>
 </table>
 </center>
@@ -39,7 +39,7 @@
       <p align="center">
           <font size="2">
               <html:link action="/index_main" target="principal">
-                    <html:img src="images/monjesentado.gif" border="0"/><br>
+                    <html:img src="/images/monjesentado.gif" border="0"/><br>
                     <bean:message key="outlook.menu.novedades"/>
                </html:link>
            </font>
@@ -49,20 +49,20 @@
 
       <p align="center">
 	      <html:link action="/loginFrm" target="principal">
-	      <html:img src="images/monjepuerta.gif" border="0"/><br>
+	      <html:img src="/images/monjepuerta.gif" border="0"/><br>
                 <bean:message key="outlook.menu.login"/>
               </html:link>
 	   </p>
       <p align="center">
 	      <html:link action="/registro" target="principal">
-	      <html:img width="55" height="68" src="images/iconos/registro.gif" border="0"/><br>
+	      <html:img width="55" height="68" src="/images/iconos/registro.gif" border="0"/><br>
                 <bean:message key="outlook.menu.registrar"/>
               </html:link>
 	   </p>
 
       <p align="center">
 	      <html:link href="http://foros.abbatia.net" target="principal">
-	      <html:img src="images/foros.gif" border="0"/><br>
+	      <html:img src="/images/foros.gif" border="0"/><br>
                 <bean:message key="outlook.menu.foros"/>
               </html:link>
 	   </p>

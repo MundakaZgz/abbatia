@@ -9,10 +9,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
-    <link rel="stylesheet" href="/theme/style-global.css" type="text/css"/>
-    <link rel="stylesheet" href="/theme/style-revised.css" type="text/css"/>
+    <link rel="stylesheet" href="<c:url value='/theme/style-global.css'/>" type="text/css"/>
+    <link rel="stylesheet" href="<c:url value='/theme/style-revised.css'/>" type="text/css"/>
     <title><bean:message key="index.header"/></title>
-    <script type="text/javascript" src="/theme/validator.js"></script>
+    <script type="text/javascript" src="<c:url value='/theme/validator.js'/>"></script>
     <html:javascript formName="RegistroForm" dynamicJavascript="true" staticJavascript="false"/>
     <script type="text/javascript">
         function activarSubmit(valorCheck) {
@@ -132,14 +132,14 @@
                     --%>
                 <div class="row">
                     <label for="email"><bean:message key="usuario.email"/></label>
-                    <html:text styleClass="field" property="email" alt="Correo Electrónico" maxlength="40"
+                    <html:text styleClass="field" property="email" alt="Correo Electrï¿½nico" maxlength="40"
                                name="RegistroForm"
                                size="40" styleId="email"/>
                 </div>
                     <%--
                                         <dt><label for="email"><bean:message key="usuario.email"/></label></dt>
                                         <dd>
-                                            <html:text property="email" alt="Correo Electrónico" maxlength="40" name="RegistroForm"
+                                            <html:text property="email" alt="Correo Electrï¿½nico" maxlength="40" name="RegistroForm"
                                                        size="40" styleId="email"/>
                                         </dd>
                     --%>

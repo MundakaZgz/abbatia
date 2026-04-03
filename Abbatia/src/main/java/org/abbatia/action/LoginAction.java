@@ -94,7 +94,15 @@ public class LoginAction extends Action {
             session.setAttribute(Constantes.ABADIA, abadia);
             session.setAttribute(Constantes.PAGE_SIZE, 10);
 
-            //si el usuario tiene asociada una abadía verificamos que no esté marcada para borrado....
+            if (abadia == null) {
+                HashMap hmRequest = oUsuarioBBean.cargarTablasRegistro();
+                request.setAttribute("regiones", hmRequest.get("regiones"));
+                request.setAttribute("ordenes", hmRequest.get("ordenes"));
+                request.setAttribute("actividades", hmRequest.get("actividades"));
+                return mapping.findForward("registroabadia");
+            }
+
+            //si el usuario tiene asociada una abadï¿½a verificamos que no estï¿½ marcada para borrado....
             if (abadia.getFechaEliminacion() != null) {
                 int iDias = CoreTiempo.getDiferenciaDiasInt(abadia.getFechaEliminacion(), CoreTiempo.getTiempoRealString());
                 mensajes.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage("mensajes.eliminacion.abadia.aviso", String.valueOf(Constantes.VARIOS_DIAS_ELIMINACION - iDias)));
@@ -104,7 +112,7 @@ public class LoginAction extends Action {
                 return mapping.findForward(Constantes.MENSAJES);
             }
 
-            //verificar si la contraseña es "potente"
+            //verificar si la contraseï¿½a es "potente"
             try {
                 Utilidades.check(usuario.getContrasena());
                 if (!usuario.isAceptaNormas()) {
@@ -153,14 +161,6 @@ public class LoginAction extends Action {
             // return to input page
             return mapping.findForward(Constantes.MENSAJES);
 
-        } catch (AbadiaNotFoundException e) {
-            //En este caso debemos redirigir a un action que se encargue de la carga de las tablas en lugar de hacerlo aquí.
-            request.getSession().setAttribute(Constantes.USER_KEY, e.getUsuario());
-            HashMap hmRequest = oUsuarioBBean.cargarTablasRegistro();
-            request.setAttribute("regiones", hmRequest.get("regiones"));
-            request.setAttribute("ordenes", hmRequest.get("ordenes"));
-            request.setAttribute("actividades", hmRequest.get("actividades"));
-            return mapping.findForward("registroabadia");
         } catch (ValidacionIncorrectaException vie) {
             errors.add("usuario", new ActionMessage("error.login.invalid"));
             if (usuario != null && usuario.getBloqueado() == 1) {

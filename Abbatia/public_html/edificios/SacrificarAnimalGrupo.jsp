@@ -16,8 +16,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
     <title><bean:message key="edificio.abadia.sacrificar.title"/></title>
-    <link REL="STYLESHEET" HREF="/theme/style-global.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/style-revised.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-global.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-revised.css" TYPE="text/css"/>
 </head>
 <body>
 

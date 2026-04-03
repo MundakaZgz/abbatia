@@ -10,9 +10,9 @@
 <html>
 <head>
     <title><html:messages id="edificios.abadia.listado.title"/></title>
-    <link REL="STYLESHEET" HREF="/theme/style-global.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/style-revised.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/styles.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-global.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-revised.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/styles.css" TYPE="text/css"/>
 </head>
 <body>
 <div id="container">
@@ -71,18 +71,18 @@
                     <logic:equal value="1" name="Nieve">
                         <img border="0" alt="<bean:write name="Edificio" property="nombre"/>"
                              STYLE="position:absolute;top:<bean:write name="Edificio" property="map_y"/>; left:50%; margin-left:<bean:write name="Edificio" property="map_x"/>;"
-                             SRC="images/mapas/nieve/<bean:write name="Edificio" property="grafico_visualizacion"/>_<bean:write name="Edificio" property="nivel"/>.gif"/>
+                             SRC="/images/mapas/nieve/<bean:write name="Edificio" property="grafico_visualizacion"/>_<bean:write name="Edificio" property="nivel"/>.gif"/>
                     </logic:equal>
                     <logic:equal value="0" name="Nieve">
                         <logic:equal value="0" name="Noche">
                             <img border="0" alt="<bean:write name="Edificio" property="nombre"/>"
                                  STYLE="position:absolute;top:<bean:write name="Edificio" property="map_y"/>; left:50%; margin-left:<bean:write name="Edificio" property="map_x"/>;"
-                                 SRC="images/mapas/<bean:write name="Edificio" property="grafico_visualizacion"/>_<bean:write name="Edificio" property="nivel"/>.gif"/>
+                                 SRC="/images/mapas/<bean:write name="Edificio" property="grafico_visualizacion"/>_<bean:write name="Edificio" property="nivel"/>.gif"/>
                         </logic:equal>
                         <logic:equal value="1" name="Noche">
                             <img border="0" alt="<bean:write name="Edificio" property="nombre"/>"
                                  STYLE="position:absolute;top:<bean:write name="Edificio" property="map_y"/>; left:50%; margin-left:<bean:write name="Edificio" property="map_x"/>;"
-                                 SRC="images/mapas/noche/<bean:write name="Edificio" property="grafico_visualizacion"/>_<bean:write name="Edificio" property="nivel"/>.gif"/>
+                                 SRC="/images/mapas/noche/<bean:write name="Edificio" property="grafico_visualizacion"/>_<bean:write name="Edificio" property="nivel"/>.gif"/>
                         </logic:equal>
                     </logic:equal>
                 </html:link>
@@ -91,7 +91,7 @@
                 <a>
                     <img border="0" alt="<bean:write name="Edificio" property="nombre"/>"
                          STYLE="position:absolute;top:<bean:write name="Edificio" property="map_y"/>; left:50%; margin-left:<bean:write name="Edificio" property="map_x"/>;"
-                         SRC="images/mapas/<bean:write name="Edificio" property="grafico_visualizacion"/>_<bean:write name="Edificio" property="nivel"/>.gif"/>
+                         SRC="/images/mapas/<bean:write name="Edificio" property="grafico_visualizacion"/>_<bean:write name="Edificio" property="nivel"/>.gif"/>
                 </a>
             </logic:equal>
         </logic:iterate>

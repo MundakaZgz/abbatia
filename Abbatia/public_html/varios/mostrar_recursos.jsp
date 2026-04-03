@@ -12,16 +12,16 @@
         <dt><span class="coin">&nbsp;</span></dt>
         <dd><bean:write name="DatosContents" property="recursoMonedas" filter="false"/></dd>
         <dt><span class="water">&nbsp;</span></dt>
-        <dd><a href="/mercado_compra_detalle.do?action=inicio&filtro=5&mercancia=4&filtrocontents=Agua"><bean:write
+        <dd><a href="${pageContext.request.contextPath}/mercado_compra_detalle.do?action=inicio&filtro=5&mercancia=4&filtrocontents=Agua"><bean:write
                 name="DatosContents" property="recursoAgua" filter="false"/></a></dd>
         <dt><span class="wood">&nbsp;</span></dt>
-        <dd><a href="/mercado_compra_detalle.do?action=inicio&filtro=5&mercancia=4&filtrocontents=Madera"><bean:write
+        <dd><a href="${pageContext.request.contextPath}/mercado_compra_detalle.do?action=inicio&filtro=5&mercancia=4&filtrocontents=Madera"><bean:write
                 name="DatosContents" property="recursoMadera" filter="false"/></a></dd>
         <dt><span class="stone">&nbsp;</span></dt>
-        <dd><a href="/mercado_compra_detalle.do?action=inicio&filtro=5&mercancia=4&filtrocontents=Piedra"><bean:write
+        <dd><a href="${pageContext.request.contextPath}/mercado_compra_detalle.do?action=inicio&filtro=5&mercancia=4&filtrocontents=Piedra"><bean:write
                 name="DatosContents" property="recursoPiedra" filter="false"/></a></dd>
         <dt><span class="iron">&nbsp;</span></dt>
-        <dd><a href="/mercado_compra_detalle.do?action=inicio&filtro=5&mercancia=4&filtrocontents=Hierro"><bean:write
+        <dd><a href="${pageContext.request.contextPath}/mercado_compra_detalle.do?action=inicio&filtro=5&mercancia=4&filtrocontents=Hierro"><bean:write
                 name="DatosContents" property="recursoHierro" filter="false"/></a></dd>
     </dl>
 </logic:notEmpty>

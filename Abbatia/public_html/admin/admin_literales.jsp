@@ -8,12 +8,12 @@
 
 <html>
 <head>
-    <link REL="STYLESHEET" HREF="/theme/styles.css" TYPE="text/css"/>
-    <script src="/theme/popup/prototype.js" type="text/javascript"></script>
-    <script src="/theme/popup/effects.js" type="text/javascript"></script>
-    <script src="/theme/popup/dragdrop.js" type="text/javascript"></script>
-    <script src="/theme/popup/popup.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="/theme/popup/popup.css" type="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/styles.css" TYPE="text/css"/>
+    <script src="${pageContext.request.contextPath}/theme/popup/prototype.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/theme/popup/effects.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/theme/popup/dragdrop.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/theme/popup/popup.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/theme/popup/popup.css" type="text/css"/>
     <title>Literales</title>
 </head>
 <body bgcolor="#E1C08B">

@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>listar_TopUsuarios</title>
-    <link REL="STYLESHEET" HREF="/theme/styles.css" TYPE="text/css">
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/styles.css" TYPE="text/css">
 </head>
 <body topmargin="2" leftmargin="4" bgcolor="#E1C08B" text="#000000">
 

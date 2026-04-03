@@ -43,7 +43,7 @@
             <table border="0" width="100%">
                 <tr>
                     <td width="50%" align="center">
-                        <img border="0" src="images/iconos/16/aldeanos.gif"
+                        <img border="0" src="/images/iconos/16/aldeanos.gif"
                              alt="<bean:message key="principal.aldeanos"/>"/>
                     </td>
                     <td width="50%" align="right">

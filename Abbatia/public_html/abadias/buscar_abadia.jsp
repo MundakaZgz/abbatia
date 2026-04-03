@@ -10,8 +10,8 @@
 <html:html>
     <head>
         <title>Pantalla muestra Impuestos</title>
-        <link REL="STYLESHEET" HREF="/theme/styles.css" TYPE="text/css">
-        <link rel="stylesheet" href="/theme/popup.css" type="text/css">
+        <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/styles.css" TYPE="text/css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/theme/popup.css" type="text/css">
     </head>
 
     <body topmargin="0" leftmargin="5" bgcolor="#E1C08B">

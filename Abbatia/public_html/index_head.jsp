@@ -74,8 +74,8 @@
     <tr>
         <td width="140" height="100">
             <!-- Publicidad -->
-            <img STYLE="position:absolute;top:0; left:0;" border="0" src="images/head-frame-left.gif"/>
-            <img STYLE="position:absolute;top:0; left:20;" SRC="images/underconstructionchurch.jpg"/>
+            <img STYLE="position:absolute;top:0; left:0;" border="0" src="/images/head-frame-left.gif"/>
+            <img STYLE="position:absolute;top:0; left:20;" SRC="/images/underconstructionchurch.jpg"/>
         </td>
 
         <td width="300" height="100" background="images/head-frame-bot.gif">
@@ -91,7 +91,7 @@
         </td>
         <td width="700" height="100" background="images/head-frame-bot.gif" align="center">
             <a href="index_main.do" target="principal">
-                <img border="0" src="images/titulo_mejorado.gif"/>
+                <img border="0" src="/images/titulo_mejorado.gif"/>
             </a>
         </td>
         <td align="left" valign="bottom" background="images/head-frame-bot.gif" width="177">
@@ -100,7 +100,7 @@
                    bordercolordark="#000000">
                 <tr>
                     <td align="center">
-                        <img alt="" src="images/Tiempo/relojarena.gif"/>
+                        <img alt="" src="/images/Tiempo/relojarena.gif"/>
                     </td>
                     <td align="center">
                         <font size="2"><B>
@@ -122,7 +122,7 @@
         <!-- manual -->
         <td align="center" valign="bottom" background="images/head-frame-bot.gif" width="161">
             <a href="/ayudas.do" target="principal">
-                <img border="0" src="images/iconos/manual.gif"><br/><b><bean:message key="index.ayudas"/></b>
+                <img border="0" src="/images/iconos/manual.gif"><br/><b><bean:message key="index.ayudas"/></b>
             </a><br/>&nbsp;<br/>&nbsp;
         </td>
     </tr>

@@ -16,7 +16,7 @@
                                 <html:link action="/bloquear_abadia">
                                     <html:img border="0" page="/images/iconos/abadia_descongelar.gif"/> <br/>
                                     <bean:message key="usuario.opcion.descongelar"/>
-                                    &nbsp;<img src="images/iconos/16/registrado.gif" border="0">
+                                    &nbsp;<img src="/images/iconos/16/registrado.gif" border="0">
                                 </html:link>
                             </td>
                         </tr>

@@ -10,15 +10,15 @@
 <html>
 <head>
     <title>Pantalla mercado venta</title>
-    <link REL="STYLESHEET" HREF="/theme/styles.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/default.css" TYPE="text/css"/>
-    <link rel="stylesheet" href="/theme/popup.css" type="text/css">
-    <script type="text/javascript" src="/theme/overlibmws/overlibmws.js"></script>
-    <script type="text/javascript" src="/theme/overlibmws/ajaxcontentmws.js"></script>
-    <script type="text/javascript" src="/theme/overlibmws/iframecontentmws.js"></script>
-    <script type="text/javascript" src="/theme/overlibmws/overlibmws_draggable.js"></script>
-    <script type="text/javascript" src="/theme/overlibmws/overlibmws_scroll.js"></script>
-    <script type="text/javascript" src="/theme/popup.js"></script>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/styles.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/default.css" TYPE="text/css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/theme/popup.css" type="text/css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/overlibmws.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/ajaxcontentmws.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/iframecontentmws.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/overlibmws_draggable.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/overlibmws/overlibmws_scroll.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/theme/popup.js"></script>
     <script type="text/javascript">
         <!--
         function vender(p_ProductoId, p_MercTipo)

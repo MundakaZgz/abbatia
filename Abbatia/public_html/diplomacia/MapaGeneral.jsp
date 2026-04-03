@@ -27,8 +27,8 @@
     <param name="quality" value="high"/>
     <param name="bgcolor" value="#E1C08B"/>
     <param name="menu" value="false"/>
-    <!--embed src="images/mapas/flash/mapabeta.swf" quality="high" menu="false" bgcolor="#E1C08B" width="700" height="540" name="mapaSendyMas" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /-->
-    <embed src="images/mapas/flash/mapa.swf" quality="high" menu="false" bgcolor="#E1C08B" width="100%"
+    <!--embed src="/images/mapas/flash/mapabeta.swf" quality="high" menu="false" bgcolor="#E1C08B" width="700" height="540" name="mapaSendyMas" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /-->
+    <embed src="/images/mapas/flash/mapa.swf" quality="high" menu="false" bgcolor="#E1C08B" width="100%"
            height="100%" name="mapaSendyMas" align="middle" allowScriptAccess="sameDomain"
            type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"/>
 </object>

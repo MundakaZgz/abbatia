@@ -71,12 +71,12 @@
                                         <tr>
                                             <td align="center"><html:text property="papado" name="PapadoImpuestos"
                                                                           size="4"></html:text>&nbsp;%
-                                                <html:img src="images/iconos/16/ayuda.gif"
+                                                <html:img src="/images/iconos/16/ayuda.gif"
                                                           altKey="diplomacia.jerarquia.comision.papado.help"/>
                                             </td>
                                             <td align="center"><html:text property="cardenales" name="PapadoImpuestos"
                                                                           size="4"></html:text>&nbsp;%
-                                                <html:img src="images/iconos/16/ayuda.gif"
+                                                <html:img src="/images/iconos/16/ayuda.gif"
                                                           altKey="diplomacia.jerarquia.comision.cardenales.help"/>
                                             </td>
                                         </tr>

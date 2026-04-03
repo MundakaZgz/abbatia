@@ -23,7 +23,7 @@ public class adInicioContents extends adbeans {
     private static Logger log = Logger.getLogger(adUtils.class.getName());
 
     /**
-     * Instancia la clase sin obtener una nueva conexión
+     * Instancia la clase sin obtener una nueva conexiï¿½n
      *
      * @param con
      * @throws AbadiaException
@@ -34,7 +34,7 @@ public class adInicioContents extends adbeans {
 
 
     public InicioContents getInicioContents(Abadia abadiaDB, String todosMensajes, Usuario usuario, MessageResources resource) throws AbadiaException {
-        //log.debug("Busco nombres para la región: " + region);
+        //log.debug("Busco nombres para la regiï¿½n: " + region);
         InicioContents Contents = new InicioContents();
         adUtils Utils = null;
         adEnfermedad enfermedadAD = null;
@@ -42,7 +42,7 @@ public class adInicioContents extends adbeans {
         adAbadia abadiaAD;
         AbadiaPuntuacion abadiaPuntuacion;
 
-        // Cargar los últimos mensajes de la abbatia
+        // Cargar los ï¿½ltimos mensajes de la abbatia
         //todo incluir idioma en el filtro.
         String sSQLMens = "SELECT MONJEID, MENSAJE, TIPO, FECHAABADIA FROM mensajes WHERE (abadiaID = ?) OR (abadiaid=-1 and monjeid=-1 and regionid=? and idiomaid = ?) " +
                 " OR (abadiaid=-1 and monjeid=-1 and regionid=-1 and idiomaid = ?) ";
@@ -256,11 +256,23 @@ public class adInicioContents extends adbeans {
             int regID = abadiaDB.getIdDeRegion();
             Contents.setTempRegion(Utils.getPropriedad(3, regID, "R"));
             String climaID = Utils.getPropriedad(1, regID, "R");
-            sHTML = "<img alt='' src='images/Tiempo/" + climaID + "_lge.gif'/><br>";
-            sHTML = sHTML + Utils.getTablaDescripcion("TIEMPO", climaID, "Calor_error");
-            sHTML = sHTML + "<br>" + resource.getMessage("monjes.abadia.a") + " " + Contents.getTempRegion() + " °C";
+            String descripcionClima = Utils.getTablaDescripcion("TIEMPO", climaID, "");
+            boolean climaDisponible = !"R".equals(climaID) && descripcionClima.length() > 0;
+            boolean temperaturaDisponible = Contents.getTempRegion() != null && Contents.getTempRegion().matches("-?\\d+(\\.\\d+)?");
+
+            sHTML = "";
+            if (climaDisponible) {
+                sHTML = "<img alt='' src='images/Tiempo/" + climaID + "_lge.gif'/><br>";
+                sHTML = sHTML + descripcionClima;
+            } else {
+                sHTML = "Clima no disponible";
+            }
+
+            if (temperaturaDisponible) {
+                sHTML = sHTML + "<br>" + resource.getMessage("monjes.abadia.a") + " " + Contents.getTempRegion() + " ï¿½C";
+            }
             Contents.setClimaRegion(sHTML);
-            // Nombre de la región
+            // Nombre de la regiï¿½n
             sHTML = resource.getMessage("monjes.abadia.tiempo") + "<br>" + Utils.getSQL("SELECT descripcion FROM region WHERE regionid = " + regID, "errorBD");
             Contents.setNomRegion(sHTML);
             return Contents;

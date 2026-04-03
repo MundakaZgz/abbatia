@@ -12,8 +12,8 @@
         <bean:message key="edificios.abadia.biblioteca.asignarprecio"/> <bean:write name="libroDetalle"
                                                                                     property="nombreLibro"/>
     </title>
-    <link REL="STYLESHEET" HREF="/theme/style-global.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/style-revised.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-global.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-revised.css" TYPE="text/css"/>
 </head>
 <body>
 <div id="container">

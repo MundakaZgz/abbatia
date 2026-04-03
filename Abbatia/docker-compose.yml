@@ -1,42 +1,72 @@
 version: '3.8'
+
 services:
   app:
+    image: my-abbatia:latest
     build:
+      context: .
       dockerfile: Dockerfile
-    restart: always
+    restart: unless-stopped
     depends_on:
       db:
         condition: service_healthy
-    image: my-abbatia:latest
+      mailhog:
+        condition: service_started
+    environment:
+      DB_HOST: ${DB_HOST:-db}
+      DB_PORT: ${DB_PORT:-3306}
+      DB_NAME: ${DB_NAME:-abbatia}
+      DB_USER: ${DB_USER:-abbatia_inet}
+      DB_PASSWORD: ${DB_PASSWORD:-change_me}
+      DB_PROCESS_USER: ${DB_PROCESS_USER:-abbatia_inet}
+      DB_PROCESS_PASSWORD: ${DB_PROCESS_PASSWORD:-change_me}
+      MANAGER_USER: ${MANAGER_USER:-admin}
+      MANAGER_PASSWORD: ${MANAGER_PASSWORD:-admin}
+      ABBATIA_AUTO_APPROVE_REGISTRATION: ${ABBATIA_AUTO_APPROVE_REGISTRATION:-true}
+      MAIL_FROM: ${MAIL_FROM:-noreply@abbatia.local}
+      MAIL_SMTP_HOST: ${MAIL_SMTP_HOST:-mailhog}
+      MAIL_SMTP_PORT: ${MAIL_SMTP_PORT:-1025}
+      MAIL_SMTP_AUTH: ${MAIL_SMTP_AUTH:-false}
+      MAIL_SMTP_SSL: ${MAIL_SMTP_SSL:-false}
+      MAIL_SMTP_STARTTLS: ${MAIL_SMTP_STARTTLS:-false}
+      MAIL_SMTP_USER: ${MAIL_SMTP_USER:-}
+      MAIL_SMTP_PASS: ${MAIL_SMTP_PASS:-}
+      MAIL_DEBUG: ${MAIL_DEBUG:-false}
     ports:
-      - "8080:8080"
-    links:
-      - db
+      - "${APP_PORT:-8080}:8080"
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    restart: unless-stopped
+    ports:
+      - "${MAILHOG_UI_PORT:-8025}:8025"
+
   db:
     image: mysql:5.7
-    restart: always
+    command: ["--lower_case_table_names=1", "--sql_mode="]
+    restart: unless-stopped
     environment:
-      MYSQL_DATABASE: abbatia
-      # So you don't have to use root, but you can if you like
-      MYSQL_USER: 'abbatia_inet'
-      # You can use whatever password you like
-      MYSQL_PASSWORD: 'abd11TIA00'
-      # Password for root access
-      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: ${DB_NAME:-abbatia}
+      MYSQL_USER: ${DB_USER:-abbatia_inet}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-change_me}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root_change_me}
     ports:
-      # <Port exposed> : < MySQL Port running inside container>
-      - '3306:3306'
-    expose:
-      # Opens port 3306 on the container
-      - '3306'
-      # Where our data will be persisted
+      - "${DB_EXPOSED_PORT:-3306}:3306"
     volumes:
-      - my-db:/var/lib/mysql
+      - db-data:/var/lib/mysql
+      - ./db/init:/docker-entrypoint-initdb.d:ro
     healthcheck:
-      test: "mysql $$MYSQL_DATABASE -u$$MYSQL_USER -p$$MYSQL_PASSWORD -e 'SELECT 1;'"
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
       interval: 20s
-      timeout: 10s
-      retries: 5
-# Names our volume
+      timeout: 20s
+      retries: 15
+      start_period: 30s
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+
 volumes:
-  my-db:
+  db-data:

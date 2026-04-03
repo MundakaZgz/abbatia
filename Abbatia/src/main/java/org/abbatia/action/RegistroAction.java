@@ -7,7 +7,9 @@ import org.abbatia.bean.Notificacion;
 import org.abbatia.bean.Table;
 import org.abbatia.bean.Usuario;
 import org.abbatia.exception.*;
+import org.abbatia.exception.base.AbadiaException;
 import org.abbatia.utils.AbadiaConfiguracion;
+import org.abbatia.utils.Constantes;
 import org.abbatia.core.CoreMail;
 import org.apache.struts.action.*;
 import org.apache.struts.util.MessageResources;
@@ -21,6 +23,24 @@ import java.util.HashMap;
 public class RegistroAction extends Action {
 
     private static Logger log = Logger.getLogger(RegistroAction.class.getName());
+    private static boolean isEnvTrue(String key) {
+        String value = System.getenv(key);
+        return value != null && "true".equalsIgnoreCase(value.trim());
+    }
+
+    private static void enviarCorreoAltaUsuario(MessageResources resource, Usuario usuario) throws AbadiaException {
+        Email email = new Email();
+        email.setAsunto(resource.getMessage("mensajes.mail.asunto"));
+        String sMensaje = resource.getMessage("mensajes.mail.body");
+        sMensaje = sMensaje + resource.getMessage("mensajes.mail.body.usuario", usuario.getNick());
+        sMensaje = sMensaje + resource.getMessage("mensajes.mail.body.password", usuario.getContrasena());
+        sMensaje = sMensaje + resource.getMessage("mensajes.mail.body.link");
+        sMensaje = sMensaje + resource.getMessage("mensajes.mail.body.fin");
+        email.setTo(usuario.getEmail());
+        email.setMsg(sMensaje);
+        CoreMail.enviarEmail(email);
+    }
+
     public ActionForward execute(ActionMapping mapping,
                                  ActionForm form,
                                  HttpServletRequest request,
@@ -55,11 +75,11 @@ public class RegistroAction extends Action {
                 throw new AceptacionNormasException("Es obligatorio aceptar las normas del juego", log);
             }
             usuario = oUsuarioBBean.registroUsuarioFin(usuariof, request.getRemoteAddr());
-            //si el usuario tiene 14 años o menos, enviamos un correo al usuario indicando que debe enviarnos autorización.
+            //si el usuario tiene 14 aï¿½os o menos, enviamos un correo al usuario indicando que debe enviarnos autorizaciï¿½n.
             if (usuario.getEdad() <= 1)
             {
                 //mandamos correo.
-                // en este punto, gestionaremos el envio de un correo electrónico y redirigimos a una pantalla que lo notifique.
+                // en este punto, gestionaremos el envio de un correo electrï¿½nico y redirigimos a una pantalla que lo notifique.
                 Email email = new Email();
                 email.setTo(usuario.getEmail());
                 email.setAsunto(resource.getMessage("solicitud.autorizacion.alta.asunto"));
@@ -67,6 +87,11 @@ public class RegistroAction extends Action {
                 email.setFilename(AbadiaConfiguracion.getBasePath() + AbadiaConfiguracion.getPropiedad("ruta.fichero.autorizacion"));
                 //email.setFilename(AbadiaConfiguracion.getBasePath() + "/ayudas/docs/autorizacionmenores.pdf");
                 CoreMail.enviarEmail(email);
+            } else if (isEnvTrue("ABBATIA_AUTO_APPROVE_REGISTRATION")) {
+                // Modo local: evita dejar altas pendientes y envia el correo con credenciales al registrar.
+                oUsuarioBBean.aprobarAltaPendiente(usuario.getIdDeUsuario());
+                usuario.setAdministrador(Constantes.USUARIO_BASICO);
+                enviarCorreoAltaUsuario(resource, usuario);
             }
 
             notas.add(new Notificacion("/Continuar.do", "Inicio"));

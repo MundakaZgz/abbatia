@@ -422,9 +422,9 @@ public class adAbadia extends adbeans {
 
     public Abadia recuperarAbadiaDeUsuario(Usuario usuario, MessageResources resource) throws AbadiaException {
         //Definición de cadena sql de consulta
-        String sSQL = "Select a.ABADIAID, a.NOMBRE, a.FECHA_CONSTRUCCION, a.ORDENID, a.ARQUITECTO, a.CAPACIDAD, a.NIVEL_JERARQUICO, a.HISTORIA, a.REGIONID, r.IDIOMAID, l.literal as DESC_IDIOMA, a.FECHA_ELIMINACION, e.NIVEL " +
-                "from abadia a, region r, idioma i, literales l, edificio e " +
-                " where a.USUARIOID = ? and r.REGIONID = a.REGIONID and r.idiomaid = i.idiomaid and i.literalid = l.literalid and l.idiomaid = " + usuario.getIdDeIdioma() + " and e.abadiaid = a.abadiaid and e.tipoedificioid = 99";
+        String sSQL = "Select a.ABADIAID, a.NOMBRE, a.FECHA_CONSTRUCCION, a.ORDENID, a.ARQUITECTO, a.CAPACIDAD, a.NIVEL_JERARQUICO, a.HISTORIA, a.REGIONID, r.IDIOMAID, i.descripcion as DESC_IDIOMA, a.FECHA_ELIMINACION " +
+            "from abadia a, region r, idioma i " +
+            " where a.USUARIOID = ? and r.REGIONID = a.REGIONID and r.idiomaid = i.idiomaid";
         //creo un objeto de tipo Abadia
         Abadia abadia = new Abadia();
         //creo un objeto de tipo PreparedStatement sobre el que se
@@ -456,7 +456,7 @@ public class adAbadia extends adbeans {
                 abadia.setIdIdioma(rs.getInt("IDIOMAID"));
                 abadia.setIdDeOrden(rs.getInt("ORDENID"));
                 abadia.setDescIdioma(rs.getString("DESC_IDIOMA"));
-                abadia.setNivelJerarquico(rs.getShort("NIVEL"));
+                abadia.setNivelJerarquico(rs.getShort("NIVEL_JERARQUICO"));
                 oAbadiaAD = new adAbadia(con);
                 abadia.setPuntuacion(oAbadiaAD.recuperarPuntuacion(abadia.getIdDeAbadia()));
                 abadia.setFechaEliminacion(rs.getString("FECHA_ELIMINACION"));

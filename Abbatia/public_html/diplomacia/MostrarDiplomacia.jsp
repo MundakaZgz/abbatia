@@ -283,7 +283,7 @@ OBISPO
                 </tr>
                 <tr>
                     <td rowspan="2" align="center">
-                        <img src="images/iconos/monje_obispo.gif">
+                        <img src="/images/iconos/monje_obispo.gif">
                     </td>
                     <td bgcolor="#E4CFA2" align="center">
                         <font color="#000000" size="1">

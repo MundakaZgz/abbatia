@@ -23,7 +23,7 @@ public class adAnimal extends adbeans {
     private static Logger log = Logger.getLogger(adAnimal.class.getName());
 
     /**
-     * Instancia la clase sin obtener una nueva conexión
+     * Instancia la clase sin obtener una nueva conexiï¿½n
      *
      * @param con
      * @throws AbadiaException
@@ -242,7 +242,7 @@ public class adAnimal extends adbeans {
     }
 
     /**
-     * Recupera un animal a partir de su código y el de su abadía
+     * Recupera un animal a partir de su cï¿½digo y el de su abadï¿½a
      *
      * @param idAnimal
      * @param idAbadia
@@ -416,6 +416,11 @@ public class adAnimal extends adbeans {
     public void crearAnimalesAbadia(Abadia abadia, Usuario usuario) throws AbadiaException {
         adEdificio edificioAD = new adEdificio(con);
         Edificio edificio = edificioAD.recuperarEdificioTipo(Constantes.EDIFICIO_GRANJA, abadia, usuario);
+
+        if (edificio == null) {
+            // En entornos con datos semilla incompletos, no hay granja inicial para poblar.
+            return;
+        }
 
         Animal animal = new Animal();
 
@@ -1185,7 +1190,7 @@ public class adAnimal extends adbeans {
 
 
     /**
-     * Actualiza el parámetro trabaja de un animal
+     * Actualiza el parï¿½metro trabaja de un animal
      *
      * @param idAnimal
      * @param trabaja  // 1->si, 2-> no

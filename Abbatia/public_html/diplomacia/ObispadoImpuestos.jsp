@@ -10,7 +10,7 @@
 <html:html>
 <head>
     <title>Pantalla muestra Impuestos</title>
-    <link REL="STYLESHEET" HREF="/theme/styles.css" TYPE="text/css">
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/styles.css" TYPE="text/css">
 </head>
 
 <body topmargin="0" leftmargin="0" bgcolor="#E1C08B">
@@ -85,34 +85,34 @@
                                         <td align="center">
                                             <html:text property="obispado" name="ObispadoImpuestos"
                                                        size="4"></html:text>&nbsp;%
-                                            <html:img src="images/iconos/16/ayuda.gif"
+                                            <html:img src="/images/iconos/16/ayuda.gif"
                                                       altKey="diplomacia.jerarquia.comision.obispado.help"/>
                                         </td>
                                         <td align="center">
                                             <html:text property="cancelacion" name="ObispadoImpuestos"
                                                        size="4"></html:text>&nbsp;%
-                                            <html:img src="images/iconos/16/ayuda.gif"
+                                            <html:img src="/images/iconos/16/ayuda.gif"
                                                       altKey="diplomacia.jerarquia.comision.cancelacion.help"/>
                                         </td>
                                         <td align="center">
                                             <html:text property="venta5" name="ObispadoImpuestos" size="4"></html:text>&nbsp;%
-                                            <html:img src="images/iconos/16/ayuda.gif"
+                                            <html:img src="/images/iconos/16/ayuda.gif"
                                                       altKey="diplomacia.jerarquia.comision.venta5.help"/>
                                         </td>
                                         <td align="center">
                                             <html:text property="venta10" name="ObispadoImpuestos" size="4"></html:text>&nbsp;%
-                                            <html:img src="images/iconos/16/ayuda.gif"
+                                            <html:img src="/images/iconos/16/ayuda.gif"
                                                       altKey="diplomacia.jerarquia.comision.venta10.help"/>
                                         </td>
                                         <td align="center">
                                             <html:text property="venta15" name="ObispadoImpuestos" size="4"></html:text>&nbsp;%
-                                            <html:img src="images/iconos/16/ayuda.gif"
+                                            <html:img src="/images/iconos/16/ayuda.gif"
                                                       altKey="diplomacia.jerarquia.comision.venta15.help"/>
                                         </td>
                                         <td align="center">
                                             <html:text property="transito" name="ObispadoImpuestos"
                                                        size="4"></html:text>&nbsp;%
-                                            <html:img src="images/iconos/16/ayuda.gif"
+                                            <html:img src="/images/iconos/16/ayuda.gif"
                                                       altKey="diplomacia.jerarquia.comision.transito.help"/>
                                         </td>
                                     </tr>

@@ -14,9 +14,9 @@
 </logic:notPresent>
 
 <head>
-    <link REL="STYLESHEET" HREF="/theme/style-global.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/style-revised.css" TYPE="text/css"/>
-    <link REL="STYLESHEET" HREF="/theme/granja.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-global.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/style-revised.css" TYPE="text/css"/>
+    <link REL="STYLESHEET" HREF="${pageContext.request.contextPath}/theme/granja.css" TYPE="text/css"/>
 </head>
 
 <SCRIPT LANGUAGE="JavaScript" type="text/javascript">
